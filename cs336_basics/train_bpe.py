@@ -1,6 +1,6 @@
 from cs336_basics.pretokenization import calculate_frequency_table
 
-from cs336_basics.utils.io import GPT2_PRETOKENIZER_PATTERN
+from cs336_basics.utils.io import GPT2_PRETOKENIZER_PATTERN, save_vocab_and_merge
 
 from tqdm import tqdm
 import os
@@ -117,7 +117,9 @@ end = time.time()
 
 print("Processing time: ", int((end-start)*1000)/1000/60, "mins. Thanks!")
 
-
+print("Saving...")
+save_vocab_and_merge(vocab, merges, "./data/TinyStoriesV2-GPT4-train_vocab.json", "./data/TinyStoriesV2-GPT4-train_merges.json")
+print("Saved!")
 
 
             

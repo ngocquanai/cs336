@@ -6,6 +6,7 @@ from concurrent.futures import ProcessPoolExecutor
 from cs336_basics.utils.io import GPT2_PRETOKENIZER_PATTERN
 import tqdm
 
+
 def _pretoken(texts: str) :
     pre_tokenized = Counter()
     for text in texts :
