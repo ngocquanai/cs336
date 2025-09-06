@@ -214,6 +214,7 @@ class MultiheadSelfAttention(nn.Module) :
 
         query, key, value = self.q_proj(x), self.k_proj(x), self.v_proj(x)
 
+
         query = rearrange(query, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
         key = rearrange(key, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
         value = rearrange(value, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
