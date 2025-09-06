@@ -107,19 +107,19 @@ def train_bpe(input_path: str | os.PathLike,
     return vocabulary, merges
 
 
-path = "data/TinyStoriesV2-GPT4-train.txt"
-special_token = "<|endoftext|>"
-special_tokens = [special_token,]
+# path = "data/TinyStoriesV2-GPT4-train.txt"
+# special_token = "<|endoftext|>"
+# special_tokens = [special_token,]
 
-vocab, merges = train_bpe(path, 15000, special_tokens, expected_chunks= 15000)
+# vocab, merges = train_bpe(path, 15000, special_tokens, expected_chunks= 15000)
 
-end = time.time()
+# end = time.time()
 
-print("Processing time: ", int((end-start)*1000)/1000/60, "mins. Thanks!")
+# print("Processing time: ", int((end-start)*1000)/1000/60, "mins. Thanks!")
 
-print("Saving...")
-save_vocab_and_merge(vocab, merges, "./data/TinyStoriesV2-GPT4-train_vocab.json", "./data/TinyStoriesV2-GPT4-train_merges.json")
-print("Saved!")
+# print("Saving...")
+# save_vocab_and_merge(vocab, merges, "./data/TinyStoriesV2-GPT4-train_vocab.json", "./data/TinyStoriesV2-GPT4-train_merges.json")
+# print("Saved!")
 
 
             

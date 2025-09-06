@@ -147,17 +147,17 @@ class Tokenizer() :
         text = total_bytes.decode(errors='replace')
         return text            
 
+
     
-    
 
-tokenizer = Tokenizer.from_files("./data/TinyStoriesV2-GPT4-train_vocab.json", "./data/TinyStoriesV2-GPT4-train_merges.json")
-
-
-text = "Hey, I'm NgocQuan, from Vietnam."   
+# tokenizer = Tokenizer.from_files("./data/TinyStoriesV2-GPT4-train_vocab.json", "./data/TinyStoriesV2-GPT4-train_merges.json")
 
 
-byte = (tokenizer.encode(text))
+# text = "Hey, I'm NgocQuan, from Vietnam."   
 
-print(tokenizer.decode(byte))
+
+# byte = (tokenizer.encode(text))
+
+# print(tokenizer.decode(byte))
         
          
