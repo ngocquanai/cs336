@@ -4,7 +4,7 @@ from torch.nn.parameter import Parameter
 import math
 from einops import rearrange
 
-from cs336_basics.function import scale_dot_product_attention
+from cs336_basics.utils.function import scale_dot_product_attention
 
 
 
@@ -26,13 +26,13 @@ class Linear(nn.Module) :
 
         torch.nn.init.trunc_normal_(weight, mean=0, std= sigma, a=-3*sigma, b= 3*sigma)
 
-        self.W = Parameter(weight)
+        self.weight = Parameter(weight)
 
     def init_weight(self, weight) :
-        self.W = Parameter(weight)
+        self.weight = Parameter(weight)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor :
-        return torch.matmul(x, self.W.T)
+        return torch.matmul(x, self.weight.T)
     
 
 class Embedding(nn.Module) :
@@ -45,14 +45,14 @@ class Embedding(nn.Module) :
         weight = torch.empty(num_embeddings, embedding_dim, device= device, dtype= dtype)
         torch.nn.init.trunc_normal_(weight, mean=0, std= 1, a= -3, b= 3)
 
-        self.embedding = Parameter(weight)
+        self.weight = Parameter(weight)
 
     def forward(self, token_ids: torch.Tensor) -> torch.Tensor :
         batch = token_ids.shape[0]
         sequence = token_ids.shape[1]
 
         flat_ids = rearrange(token_ids, "batch sequence -> (batch sequence)")
-        flat_embeddings = self.embedding[flat_ids, :]
+        flat_embeddings = self.weight[flat_ids, :]
         embeddings = rearrange(flat_embeddings, "(batch sequence) d_model -> batch sequence d_model", batch= batch, sequence= sequence)
 
         return embeddings
@@ -93,16 +93,16 @@ class SwiGLU(nn.Module) :
         if not d_ff :
             d_ff = round(8/3 * d_model / 64) * 64
 
-        self.W1 = Linear(in_features= d_model, out_features= d_ff, device= device, dtype= dtype)
-        self.W3 = Linear(in_features=d_model, out_features= d_ff, device= device, dtype= dtype)
-        self.W2 = Linear(in_features= d_ff, out_features= d_model, device= device, dtype= dtype)
+        self.w1 = Linear(in_features= d_model, out_features= d_ff, device= device, dtype= dtype)
+        self.w3 = Linear(in_features=d_model, out_features= d_ff, device= device, dtype= dtype)
+        self.w2 = Linear(in_features= d_ff, out_features= d_model, device= device, dtype= dtype)
 
     def silu(self, x: torch.Tensor) -> torch.Tensor :
         return x * torch.sigmoid(x)
     
     def forward(self, x: torch.Tensor) -> torch.Tensor :
-        x = self.silu(self.W1(x)) * self.W3(x)
-        return self.W2(x)
+        x = self.silu(self.w1(x)) * self.w3(x)
+        return self.w2(x)
     
 
 
@@ -190,63 +190,64 @@ class RoPE(nn.Module):
         return rotated_x
     
 
-class MultiheadSelfAttention(nn.Module) :
-    def __init__(self, d_model: int, num_heads: int,
-                 device: torch.device | None = None,
-                 dtype: torch.dtype | None = None) :
-        super().__init__()
-        self.d_model = d_model
-        self.num_heads = num_heads
+# class MultiheadSelfAttention(nn.Module) :
+#     def __init__(self, d_model: int, num_heads: int,
+#                  device: torch.device | None = None,
+#                  dtype: torch.dtype | None = None) :
+#         super().__init__()
+#         self.d_model = d_model
+#         self.num_heads = num_heads
 
-        self.d_k = d_model // num_heads
+#         self.d_k = d_model // num_heads
 
 
-        self.q_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
-        self.k_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
-        self.v_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
-        self.o_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
+#         self.q_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
+#         self.k_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
+#         self.v_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
+#         self.o_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
 
         
 
-    def forward(self, x: torch.Tensor) : 
-        seq_len = x.shape[-2]
-        mask = ~torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool().to(x.device)
+#     def forward(self, x: torch.Tensor) : 
+#         seq_len = x.shape[-2]
+#         mask = ~torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool().to(x.device)
 
-        query, key, value = self.q_proj(x), self.k_proj(x), self.v_proj(x)
+#         query, key, value = self.q_proj(x), self.k_proj(x), self.v_proj(x)
 
 
-        query = rearrange(query, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
-        key = rearrange(key, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
-        value = rearrange(value, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
+#         query = rearrange(query, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
+#         key = rearrange(key, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
+#         value = rearrange(value, "... seq (head dk) -> ... head seq dk", head= self.num_heads, dk= self.d_k)
 
-        attention = scale_dot_product_attention(query, key, value, mask= mask)
+#         attention = scale_dot_product_attention(query, key, value, mask= mask)
 
-        attention = rearrange(attention, "...  head seq dk -> ... seq (head dk)")
+#         attention = rearrange(attention, "...  head seq dk -> ... seq (head dk)")
 
-        output = self.o_proj(attention)
+#         output = self.o_proj(attention)
 
-        return output
+#         return output
     
 
 
-class RoPEMultiheadSelfAttention(nn.Module) :
+class MultiheadSelfAttention(nn.Module) :
     def __init__(self, d_model: int, num_heads: int,
-                 theta: float, max_seq_len: int,
+                 theta: float = 10000.0, max_seq_len: int = 1024,
                  device: torch.device | None = None,
-                 dtype: torch.dtype | None = None) :
+                 dtype: torch.dtype | None = None, use_rope: bool = True) :
         super().__init__()
         self.d_model = d_model
         self.num_heads = num_heads
 
         self.d_k = d_model // num_heads
 
+        self.use_rope = use_rope
         self.rope = RoPE(theta= theta, d_k= self.d_k, max_seq_len= max_seq_len, device= device)
 
 
         self.q_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
         self.k_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
         self.v_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
-        self.o_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
+        self.output_proj = Linear(in_features= d_model, out_features= d_model, device= device, dtype= dtype)
 
         
 
@@ -268,16 +269,39 @@ class RoPEMultiheadSelfAttention(nn.Module) :
         token_positions = token_positions.view(1, 1, -1)
         token_positions= token_positions.expand(batch, self.num_heads, -1) # type: ignore
 
-        query = self.rope(query, token_positions)
-        key = self.rope(key, token_positions)
+        if self.use_rope :
+            query = self.rope(query, token_positions)
+            key = self.rope(key, token_positions)
 
         attention = scale_dot_product_attention(query, key, value, mask= mask)
 
         attention = rearrange(attention, "...  head seq dk -> ... seq (head dk)")
 
-        output = self.o_proj(attention)
+        output = self.output_proj(attention)
 
         return output
+    
+
+class TransformerBlock(nn.Module) :
+    def __init__(self, d_model: int, num_heads: int, d_ff: int,
+                 theta: float = 10000.0, max_seq_len: int = 1024,
+                 device: torch.device | None = None,
+                 dtype: torch.dtype | None = None) :
+        super().__init__()
+        self.ln1 = RMSNorm(d_model= d_model, device= device, dtype= dtype)
+        self.ln2 = RMSNorm(d_model= d_model, device= device, dtype= dtype)
+        self.attn = MultiheadSelfAttention(d_model= d_model, num_heads= num_heads, theta= theta, 
+                                           max_seq_len= max_seq_len, device= device, dtype= dtype)
+        self.ffn = SwiGLU(d_model= d_model, d_ff= d_ff, device= device, dtype= dtype)
+
+    
+    def forward(self, x) :
+        x += self.attn(self.ln1(x))
+        x += self.ffn(self.ln2(x))
+
+        return x
+
+
     
 
         

@@ -1,4 +1,4 @@
-from cs336_basics.pretokenization import calculate_frequency_table
+from cs336_basics.utils.pretokenization import calculate_frequency_table
 
 from cs336_basics.utils.io import GPT2_PRETOKENIZER_PATTERN, save_vocab_and_merge
 
