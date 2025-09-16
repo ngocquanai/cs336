@@ -49,10 +49,13 @@ class Tokenizer() :
 
         # add special tokens as string to id mapping
         self.special_tokens = {}
+        self.special_tokens_ids = set()
         if special_tokens:
             special_tokens = sorted(special_tokens, key=len, reverse=True)
             for token in special_tokens:
                 token_byte = token.encode("utf-8")
+
+
                 if token_byte not in self.vocab['byte_to_int']:
                     self.vocab['byte_to_int'][token_byte] = len(self.vocab['byte_to_int'])
                     self.vocab['int_to_byte'][len(self.vocab['int_to_byte'])] = token_byte
@@ -63,7 +66,7 @@ class Tokenizer() :
 
     @classmethod
     def from_files(cls, vocab_filepath: str,
-                    merges_filepath: str, special_tokens= None):
+                    merges_filepath: str, special_tokens: list[str] | None = None):
         """Load vocab and merges from file paths"""
 
         vocab, merges = get_tokenizer_from_vocab_merges_path(vocab_filepath, merges_filepath)
@@ -113,7 +116,7 @@ class Tokenizer() :
     
     
     def encode(self, text: str) -> list:
-        """Encode the input text, return bytes"""
+        """Encode the input text, return ids"""
 
         if self.special_tokens:
             special_pattern = "(" + "|".join(re.escape(k) for k in self.special_tokens) + ")"
@@ -138,14 +141,18 @@ class Tokenizer() :
 
 
     def decode(self, ids: list[int]) -> str:
-        """Decode the bytes, return text"""
+        """Decode the ids input, return text"""
         total_bytes = b""
         for id in ids :
             byte = self.vocab["int_to_byte"][id]
             total_bytes += byte
         
         text = total_bytes.decode(errors='replace')
-        return text            
+        return text    
+
+
+
+
 
 
     

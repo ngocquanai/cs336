@@ -4,7 +4,8 @@ import torch.nn.functional as F
 import numpy as np
 import random
 
-def softmax(x: torch.Tensor, dim: int = -1) :
+def softmax(x: torch.Tensor, dim: int = -1, temperature= 1) :
+    x = x / temperature
 
     x = x - torch.max(x, dim=dim)[0].unsqueeze(dim)
     x = torch.exp(x)
@@ -81,8 +82,25 @@ def data_loading(x, batch_size, context_length, device) :
     return inputs, labels
 
 
-    
 
+def save_checkpoint(model, optimizer, iteration, out) :
+    state_dict = {"model": model.state_dict(), "optimizer": optimizer.state_dict(), "iteration": iteration}
+    torch.save(state_dict, out)
+
+
+def load_checkpoint(src, model, optimizer) :
+    checkpoint = torch.load(src)
+    model = model.load_state_dict(checkpoint["model"])
+    optimizer = optimizer.load_state_dict(checkpoint["optimizer"])
+
+    iteration = checkpoint["iteration"]
+    state_dict = {"model": model, "optimizer": optimizer, "iteration": iteration}
+    return state_dict
+
+
+
+def top_p_sampling(pred, threshold) :
+    return pred
 
     
 

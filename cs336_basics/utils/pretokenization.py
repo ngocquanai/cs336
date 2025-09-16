@@ -15,7 +15,7 @@ def _pretoken(texts: str) :
     return pre_tokenized
 
 
-def _find_boundaries(
+def find_boundaries(
         file: BinaryIO,
         special_token: bytes,
         expected_chunks: int
@@ -66,7 +66,7 @@ def calculate_frequency_table(
     text_chunks = []
 
     with open(path, "rb") as f :
-        expected_boundaries = _find_boundaries(f, special_token, expected_chunks)
+        expected_boundaries = find_boundaries(f, special_token, expected_chunks)
         occurance = dict()
         special_token_str = special_token.decode()
         
