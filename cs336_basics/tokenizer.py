@@ -35,7 +35,9 @@ class Tokenizer() :
         self.vocab = {}
         self.vocab["int_to_byte"] = int_to_byte
         self.vocab["byte_to_int"] = byte_to_int
-        self._refine_vocab()
+        # self._refine_vocab()
+
+
 
         # set up merges
         self.merges = dict()
@@ -145,6 +147,7 @@ class Tokenizer() :
         total_bytes = b""
         for id in ids :
             byte = self.vocab["int_to_byte"][id]
+            # print(byte)
             total_bytes += byte
         
         text = total_bytes.decode(errors='replace')

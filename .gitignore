@@ -163,5 +163,8 @@ cython_debug/
 *.zip
 
 data/
+tiny_data/
 
 cs336_basic/test.py
+cs336_basic/data
+cs336_basic/tiny_data

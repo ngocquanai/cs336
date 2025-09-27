@@ -55,58 +55,147 @@ def find_boundaries(
     return sorted(set(expected_boundaries))
 
 
+# Pass this dictionary to the worker function, as the worker processes don't 
+# have access to the variables in the main function's scope.
+WORKER_GLOBALS = {}
+
+def _process_chunk(start_end_pair):
+    """Worker function that processes a single file chunk by reading it directly."""
+    # Note: WORKER_GLOBALS must be set up before ProcessPoolExecutor starts
+    path = WORKER_GLOBALS['path']
+    special_token_str = WORKER_GLOBALS['special_token_str']
+    
+    start, end = start_end_pair
+    
+    try:
+        with open(path, "rb") as f:
+            f.seek(start)
+            raw_text = f.read(end - start)
+            text = raw_text.decode(errors="ignore")
+            
+            # Split and pre-tokenize this single chunk
+            texts = text.split(special_token_str)
+            
+            pre_tokenized = Counter()
+            for t in texts:
+                current = re.findall(GPT2_PRETOKENIZER_PATTERN, t)
+                pre_tokenized += Counter(current)
+            
+            return pre_tokenized
+    except Exception as e:
+        # Crucial for debugging OOM or other hidden errors
+        print(f"Worker ERROR processing chunk {start}-{end}: {e}", flush=True)
+        raise
+
+
+
+# def calculate_frequency_table(
+#         path: str | os.PathLike,
+#         special_token: bytes,
+#         PAT: str,
+#         expected_chunks,
+#         max_workers: int = 2
+# ) -> dict[tuple[bytes], int]:
+    
+#     text_chunks = []
+
+#     with open(path, "rb") as f :
+#         expected_boundaries = find_boundaries(f, special_token, expected_chunks)
+#         occurance = dict()
+#         special_token_str = special_token.decode()
+        
+#         pbar = tqdm.tqdm(total=len(expected_boundaries), dynamic_ncols=True, mininterval=0)
+#         print("Point 0")
+#         print("Max workers: ", max_workers)
+#         for start, end in zip(expected_boundaries[:-1], expected_boundaries[1:]) :
+
+#             f.seek(start)
+#             raw_text = f.read(end - start)
+#             text = raw_text.decode(errors= "ignore")
+
+
+#             # split by the special token
+#             texts = text.split(special_token_str)
+
+
+#             text_chunks.append(texts)
+#             pbar.update(1) 
+#             pbar.refresh()
+            
+            
+#         print("Point 1")
+#         with ProcessPoolExecutor(max_workers= max_workers) as executor :
+#             pre_tokenize = executor.map(_pretoken, text_chunks)
+#         print("Point 2")
+#         occurance = sum(pre_tokenize, Counter())
+
+
+
+#         print("Point 3")
+#         frequency_table = dict()
+#         for key, value in occurance.items() :
+#             encoded_key = key.encode()
+#             key_tuple = tuple(bytes([byte_value]) for byte_value in encoded_key)
+#             frequency_table[key_tuple] = value
+#         print("Point 4")
+#         pbar.close()
+#         return frequency_table
+
 def calculate_frequency_table(
         path: str | os.PathLike,
         special_token: bytes,
         PAT: str,
         expected_chunks,
-        max_workers: int = 20
+        max_workers: int = 2
 ) -> dict[tuple[bytes], int]:
     
-    text_chunks = []
-
+    # --- STEP 1: Find Boundaries ---
     with open(path, "rb") as f :
         expected_boundaries = find_boundaries(f, special_token, expected_chunks)
-        occurance = dict()
-        special_token_str = special_token.decode()
+    
+    pbar = tqdm.tqdm(total=len(expected_boundaries) - 1, dynamic_ncols=True, mininterval=0)
+    print("Point 0: Found boundaries.")
+    print("Max workers: ", max_workers)
+
+    # --- STEP 2: Prepare Worker Input (Lightweight) ---
+    # The input to map is a list of (start, end) tuples, which is tiny.
+    boundaries_pairs = list(zip(expected_boundaries[:-1], expected_boundaries[1:]))
+
+    # --- STEP 3: Setup Worker Global Variables ---
+    # Workers need access to the file path and special token string.
+    global WORKER_GLOBALS
+    WORKER_GLOBALS['path'] = path
+    WORKER_GLOBALS['special_token_str'] = special_token.decode()
+    
+    print("Point 1: Starting parallel execution.")
+    
+    # --- STEP 4: Parallel Processing (File I/O is now inside the worker) ---
+    with ProcessPoolExecutor(max_workers=max_workers) as executor :
+        # Use map to process the lightweight boundary pairs
+        pre_tokenize_results = list(executor.map(_process_chunk, boundaries_pairs))
         
-        pbar = tqdm.tqdm(total=len(expected_boundaries), dynamic_ncols=True, mininterval=0)
+        # Use a secondary progress bar for the actual processing
+        # Note: map is blocking, so the overall tqdm will be updated *after* map finishes.
+        # It's better to use futures.as_completed for progress, but this is simpler.
 
-        for start, end in zip(expected_boundaries[:-1], expected_boundaries[1:]) :
+    print("Point 2: Parallel execution complete.")
+    
+    # --- STEP 5: Aggregate Results ---
+    # Sum the list of Counter objects
+    occurance = sum(pre_tokenize_results, Counter())
 
-            f.seek(start)
-            raw_text = f.read(end - start)
-            text = raw_text.decode(errors= "ignore")
-
-
-            # split by the special token
-            texts = text.split(special_token_str)
-
-
-            text_chunks.append(texts)
-            pbar.update(1) 
-            pbar.refresh()
-            
-            
-
-        with ProcessPoolExecutor(max_workers= max_workers) as executor :
-            pre_tokenize = executor.map(_pretoken, text_chunks)
-        
-        occurance = sum(pre_tokenize, Counter())
-
-
-
-                    
-        frequency_table = dict()
-        for key, value in occurance.items() :
-            encoded_key = key.encode()
-            key_tuple = tuple(bytes([byte_value]) for byte_value in encoded_key)
-            frequency_table[key_tuple] = value
-
-        pbar.close()
-        return frequency_table
-
-
+    # The rest of the logic remains the same...
+    print("Point 3: Aggregating results.")
+    frequency_table = {}
+    for key, value in occurance.items() :
+        encoded_key = key.encode()
+        # Your original logic converts the encoded key into a tuple of single-byte bytes objects
+        key_tuple = tuple(bytes([byte_value]) for byte_value in encoded_key)
+        frequency_table[key_tuple] = value
+    
+    print("Point 4: Frequency table prepared.")
+    pbar.close() # Close the tqdm that was showing boundary search progress
+    return frequency_table
 
 
 

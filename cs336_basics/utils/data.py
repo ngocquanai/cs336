@@ -26,11 +26,11 @@ def preprocessing(data_path, tokenizer, special_tokens, save_path) :
     full_ids.tofile(save_path)
     print("SAVED ENCODED DATA, a numpy array contains ids !!!")
 
-data_path = "./data/TinyStoriesV2-GPT4-valid.txt"
-vocab_file = "./data/TinyStoriesV2-GPT4-train_vocab.json"
-merges_file = "./data/TinyStoriesV2-GPT4-train_merges.json"
-special_tokens = ["<|endoftext|>"]
-tokenizer = Tokenizer.from_files(vocab_filepath= vocab_file, merges_filepath= merges_file, special_tokens= special_tokens)
+# data_path = "./data/TinyStoriesV2-GPT4-valid.txt"
+# vocab_file = "./data/TinyStoriesV2-GPT4-train_vocab.json"
+# merges_file = "./data/TinyStoriesV2-GPT4-train_merges.json"
+# special_tokens = ["<|endoftext|>"]
+# tokenizer = Tokenizer.from_files(vocab_filepath= vocab_file, merges_filepath= merges_file, special_tokens= special_tokens)
 
 
 # preprocessing(data_path, tokenizer, special_tokens)

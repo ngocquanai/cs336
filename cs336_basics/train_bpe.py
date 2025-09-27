@@ -25,7 +25,7 @@ def train_bpe(input_path: str | os.PathLike,
               vocab_size: int, 
               special_tokens: list[str],
               progress_bar: bool = False, 
-              expected_chunks= 50000
+              expected_chunks= 100000
               ) : 
     special_token = special_tokens[0].encode()
     frequency_table = calculate_frequency_table(input_path, special_token, GPT2_PRETOKENIZER_PATTERN, expected_chunks= expected_chunks) # dict[tuple[bytes], int]
@@ -34,7 +34,7 @@ def train_bpe(input_path: str | os.PathLike,
     merges = []
 
 
-
+    print("Point 5")
     # init vocabulary
     vocabulary = dict() # dict[int, bytes]
     for i in range(256) :
@@ -47,6 +47,7 @@ def train_bpe(input_path: str | os.PathLike,
 
 
 # first, compute original adjacent_count
+    print("Point 6")
     for bytes_tuple, times in frequency_table.items() :
         for a, b in zip(bytes_tuple, bytes_tuple[1:]) :
             adj = (a, b)
@@ -57,7 +58,7 @@ def train_bpe(input_path: str | os.PathLike,
         
 
     while len(vocabulary) < vocab_size :
-
+        print(len(vocabulary))
         new_id = max(vocabulary.keys()) + 1
         most_freq_adj = max(adjacent_count, key=lambda k: (adjacent_count[k], k))
         new_token = b"".join(most_freq_adj)

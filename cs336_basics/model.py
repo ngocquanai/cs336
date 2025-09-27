@@ -19,7 +19,7 @@ class TransformerLM(nn.Module) :
         self.token_embeddings = Embedding(num_embeddings= vocab_size, embedding_dim= d_model, device= device, dtype= dtype)
 
         layers = [TransformerBlock(d_model= d_model, num_heads= num_heads, d_ff= d_ff, theta= rope_theta, max_seq_len= context_length, device= device, dtype= dtype) for _ in range(num_layers)]
-        print("Total layers: ", layers)
+        # print("Total layers: ", layers)
         self.layers = nn.Sequential(*layers)
 
         self.ln_final = RMSNorm(d_model= d_model, device= device, dtype= dtype)

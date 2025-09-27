@@ -1,5 +1,3 @@
-import torch
-
-a = torch.tensor([1, 4, 2, 5])
-
-print(torch.argmax(a))
+for i in range(256) :
+    byte = bytes([i])
+    print(i, byte)
