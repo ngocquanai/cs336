@@ -41,9 +41,7 @@ def decoding(model, tokenizer, prompt, temperature= 1, max_token_generated = 256
     generated_tokens += 1
 
     # breakpoint()
-    # while token_id not in end_token_ids :
-    max_token_generated = 64
-    while True :
+    while token_id not in end_token_ids :
 
         input_ids.append(token_id)
 
@@ -122,13 +120,13 @@ betas = (0.9, 0.99)
 T_max = 3
 
 special_tokens = ["<|endoftext|>"]
-train_data_path = "./cs336_basics/data/owt_train.txt"
+train_data_path = "./cs336_basics/data/owt_valid.txt"
 valid_data_path = "./cs336_basics/data/owt_valid.txt"
 
 tokenizer_path = "./cs336_basics/data/owt_tokenizer"
 
-encoded_train_path = "./cs336_basics/data/encode_train_test.bin"
-encoded_valid_path = "./cs336_basics/data/encode_valid_test.bin"
+encoded_train_path = "./cs336_basics/data/encode_train.bin"
+encoded_valid_path = "./cs336_basics/data/encode_valid.bin"
 
 
 print("Start! Hope it work well!")
@@ -161,11 +159,11 @@ print(f"Decoded text: {tokenizer.decode(encoded_ids)}")
 
 print("Loaded tokenizer!")
 if not os.path.exists(encoded_train_path) :
-    # preprocessing(train_data_path, tokenizer= tokenizer, special_tokens= special_tokens, save_path= encoded_train_path)
+    preprocessing(train_data_path, tokenizer= tokenizer, special_tokens= special_tokens, save_path= encoded_train_path)
     preprocessing(valid_data_path, tokenizer= tokenizer, special_tokens= special_tokens, save_path= encoded_valid_path)
 
 
-dataset = DatasetLM(train_path= encoded_valid_path, valid_path= encoded_valid_path, batch_size= batch_size, context_len= context_length, device= device)
+dataset = DatasetLM(train_path= encoded_train_path, valid_path= encoded_valid_path, batch_size= batch_size, context_len= context_length, device= device)
 print("Loaded dataset!")
 
 
@@ -184,11 +182,6 @@ torch.autograd.set_detect_anomaly(True)
 for step in tqdm(range(steps)) :
     inputs, labels = dataset.sample("train", batch_size= batch_size)
 
-
-    sample_input = inputs[0].tolist()
-    print(tokenizer.decode(sample_input))
-
-
     inputs = inputs.to("cuda")
     labels = labels.to("cuda")
     logits = model(inputs)
@@ -201,11 +194,11 @@ for step in tqdm(range(steps)) :
     optimizer.zero_grad()
     scheduler.step()
     total_loss += loss.item()
-    if step % 100 == 0 and step < 10000:
+    if step % 300 == 0 and step < 10000:
         loss = int(loss * 10000) / 10000
         print(f"Loss at step {step}: {loss}")
 
-    if step % 250 == 236 :
+    if step % 500 == 236 :
         prompt = "The capital city of Vietnam is:"
         test_ans = decoding(model, tokenizer, prompt, temperature= 1)
         print(prompt)
