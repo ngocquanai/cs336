@@ -7,7 +7,7 @@ import torch.nn.functional as F
 
 
 
-from cs336_basics.tokenizer import Tokenizer
+from cs336_basics.tokenizer import train_tokenizer
 from cs336_basics.utils.function import softmax, cross_entropy
 from cs336_basics.utils.io import save_vocab_and_merge
 from cs336_basics.train_bpe import train_bpe
@@ -17,6 +17,7 @@ from cs336_basics.utils.data import preprocessing
 from cs336_basics.dataset import DatasetLM
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import CosineAnnealingLR
+from transformers import PreTrainedTokenizerFast
 
 from tqdm import tqdm
 
@@ -40,7 +41,9 @@ def decoding(model, tokenizer, prompt, temperature= 1, max_token_generated = 256
     generated_tokens += 1
 
     # breakpoint()
-    while token_id not in end_token_ids :
+    # while token_id not in end_token_ids :
+    max_token_generated = 64
+    while True :
 
         input_ids.append(token_id)
 
@@ -58,7 +61,6 @@ def decoding(model, tokenizer, prompt, temperature= 1, max_token_generated = 256
 
     generated_ids = input_ids[initial_len:]
     output = tokenizer.decode(generated_ids)
-    output 
 
     return output
 
@@ -108,12 +110,12 @@ device = torch.device("cuda")
 vocab_size = 32768  
 context_length = 256
 num_layers = 8
-d_model = 512
+d_model = 768
 d_ff = 1344
-num_heads = 16
+num_heads = 12
 rope_theta = 10000.0
 steps = 100000
-batch_size= 8
+batch_size= 16
 lr = 5e-4
 wd = 0.01
 betas = (0.9, 0.99)
@@ -123,38 +125,47 @@ special_tokens = ["<|endoftext|>"]
 train_data_path = "./cs336_basics/data/owt_train.txt"
 valid_data_path = "./cs336_basics/data/owt_valid.txt"
 
-vocab_path = "./cs336_basics/data/vocab.json"
-merges_path = "./cs336_basics/data/merges.json"
+tokenizer_path = "./cs336_basics/data/owt_tokenizer"
 
-encoded_train_path = "./cs336_basics/data/encode_train.bin"
-encoded_valid_path = "./cs336_basics/data/encode_valid.bin"
+encoded_train_path = "./cs336_basics/data/encode_train_test.bin"
+encoded_valid_path = "./cs336_basics/data/encode_valid_test.bin"
 
 
 print("Start! Hope it work well!")
-if not os.path.exists(vocab_path) :
-    vocab, merges = train_bpe(input_path= train_data_path, vocab_size= vocab_size, special_tokens= special_tokens)
-    save_vocab_and_merge(vocab= vocab, merges= merges, vocab_path= vocab_path, merges_path= merges_path)
+# if not os.path.exists(vocab_path) :
+#     vocab, merges = train_bpe(input_path= train_data_path, vocab_size= vocab_size, special_tokens= special_tokens)
+#     save_vocab_and_merge(vocab= vocab, merges= merges, vocab_path= vocab_path, merges_path= merges_path)
 
-print("Loaded vocab and merges")
+# print("Loaded vocab and merges")
 
-tokenizer = Tokenizer.from_files(vocab_filepath= vocab_path, merges_filepath= merges_path, special_tokens= special_tokens)
+# tokenizer = Tokenizer.from_files(vocab_filepath= vocab_path, merges_filepath= merges_path, special_tokens= special_tokens)
+
+
+
+# For open web dataset, using Tokenizer from huggingface instead
+
+if not os.path.exists(tokenizer_path) :
+    train_tokenizer(train_data_path, tokenizer_path)
+else :
+    tokenizer = PreTrainedTokenizerFast.from_pretrained(tokenizer_path)
+
+
 
 test_str = "Hello, I'm NgocQuan from Việt Nam! I love training large language model. <|endoftext|>"
 print(f"Test tokenizer: {test_str}")
-print(f"Encoded ids: {tokenizer.encode(test_str)}")
+encoded_ids = tokenizer.encode(test_str)
+print(f"Encoded ids contains {len(encoded_ids)} tokens: {encoded_ids}")
 
-decoded = []
-for idx in tokenizer.encode(test_str) :
-    decoded.append(tokenizer.decode([idx]))
-print(f"Decoded tokens: {decoded}")
+
+print(f"Decoded text: {tokenizer.decode(encoded_ids)}")
 
 print("Loaded tokenizer!")
 if not os.path.exists(encoded_train_path) :
-    preprocessing(train_data_path, tokenizer= tokenizer, special_tokens= special_tokens, save_path= encoded_train_path)
+    # preprocessing(train_data_path, tokenizer= tokenizer, special_tokens= special_tokens, save_path= encoded_train_path)
     preprocessing(valid_data_path, tokenizer= tokenizer, special_tokens= special_tokens, save_path= encoded_valid_path)
 
 
-dataset = DatasetLM(train_path= encoded_train_path, valid_path= encoded_valid_path, batch_size= batch_size, context_len= context_length, device= device)
+dataset = DatasetLM(train_path= encoded_valid_path, valid_path= encoded_valid_path, batch_size= batch_size, context_len= context_length, device= device)
 print("Loaded dataset!")
 
 
@@ -172,8 +183,14 @@ print("Training time !!!")
 torch.autograd.set_detect_anomaly(True)
 for step in tqdm(range(steps)) :
     inputs, labels = dataset.sample("train", batch_size= batch_size)
-    # inputs = inputs.to("cuda")
-    # labels = labels.to("cuda")
+
+
+    sample_input = inputs[0].tolist()
+    print(tokenizer.decode(sample_input))
+
+
+    inputs = inputs.to("cuda")
+    labels = labels.to("cuda")
     logits = model(inputs)
     logits = logits.view(-1, logits.shape[-1])
     labels = labels.view(-1)
@@ -189,7 +206,7 @@ for step in tqdm(range(steps)) :
         print(f"Loss at step {step}: {loss}")
 
     if step % 250 == 236 :
-        prompt = "Thousands of years ago, there was a pretty girl named Linh Anh, who was very"
+        prompt = "The capital city of Vietnam is:"
         test_ans = decoding(model, tokenizer, prompt, temperature= 1)
         print(prompt)
         print(f"Answer: {test_ans} <end>")

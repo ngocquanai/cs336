@@ -25,8 +25,8 @@ def get_batch(x, batch_size, context_length, device) :
 class DatasetLM :
     def __init__(self, train_path, valid_path, batch_size, context_len,
                  device: torch.device | None = None) -> None:
-        self.train = np.memmap(filename= train_path, dtype= np.uint16, mode="r").astype(np.int64)
-        self.val = np.memmap(filename= valid_path, dtype= np.uint16, mode= "r").astype(np.int64)
+        self.train = np.memmap(filename= train_path, dtype= np.int32, mode="r")
+        self.val = np.memmap(filename= valid_path, dtype= np.int32, mode= "r")
         self.batch_size = batch_size
         self.context_len = context_len
         self.device = device
@@ -36,11 +36,13 @@ class DatasetLM :
             batch_size = self.batch_size
 
         if split == "train" :
-            return get_batch(self.train, batch_size= batch_size, 
+            batch = get_batch(self.train, batch_size= batch_size, 
                              context_length= self.context_len, device= self.device)
         else :
-            return get_batch(self.val, batch_size= batch_size,
+            batch = get_batch(self.val, batch_size= batch_size,
                              context_length= self.context_len, device= self.device)
+
+        return batch
         
     def get_len(self, split= "train") :
         if split == "train" :

@@ -1,6 +1,7 @@
 from cs336_basics.utils.pretokenization import find_boundaries
 from cs336_basics.tokenizer import Tokenizer
 import numpy as np
+from tqdm import tqdm
 
 
 
@@ -11,10 +12,10 @@ def preprocessing(data_path, tokenizer, special_tokens, save_path) :
     end_token_len = len(text_end_token)
     full_ids = []
     with open(data_path, "rb") as file :
-        boundary_index = find_boundaries(file, end_token, expected_chunks= 10000)
+        boundary_index = find_boundaries(file, end_token, expected_chunks= 100000)
         boundary_index.insert(0, 0) # add starting point as the begin of file
 
-        for (start, end) in zip(boundary_index[:-1], boundary_index[1:]) :
+        for (start, end) in tqdm(zip(boundary_index[:-1], boundary_index[1:])) :
             file.seek(start)
             raw_text = file.read(end - start)
             text = raw_text.decode(errors= "ignore")

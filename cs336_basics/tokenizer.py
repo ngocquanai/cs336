@@ -2,6 +2,51 @@ from cs336_basics.utils.io import get_tokenizer_from_vocab_merges_path, GPT2_PRE
 import regex as re
 # from typing import Iterable, Dict, Tuple, List
 
+from tokenizers import models, decoders, trainers, Tokenizer, pre_tokenizers, processors
+from transformers import PreTrainedTokenizerFast
+
+
+
+def train_tokenizer(training_data, saved_path) :
+
+    tokenizer = Tokenizer(models.BPE())
+    tokenizer.pre_tokenizer = pre_tokenizers.ByteLevel(add_prefix_space= False)
+
+    trainer = trainers.BpeTrainer(vocab_size= 32768, special_tokens=  ["<|endoftext|>"])
+
+    tokenizer.model = models.BPE()
+    tokenizer.train([training_data], trainer= trainer)
+
+    tokenizer.post_processor = processors.ByteLevel(trim_offsets=False)
+
+    tokenizer.decoder = decoders.ByteLevel()
+
+    wrapped_tokenizer = PreTrainedTokenizerFast(
+        tokenizer_object=tokenizer,
+        bos_token="<|endoftext|>",
+        eos_token="<|endoftext|>",
+    )
+
+    wrapped_tokenizer.save_pretrained(saved_path)
+
+
+# train_tokenizer("cs336_basics/data/owt_train.txt", "cs336_basics/data/owt_tokenizer")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def get_pairs(ids: list[int]) -> set:
     pairs = set()
     for pair in zip(ids[:-1], ids[1:]) :
@@ -20,10 +65,7 @@ def update_ids(ids: list[int], pair: tuple[int, int], new_id: int) :
     
     return ids
 
-
-
-
-class Tokenizer() :
+class TokenizerFromScratch() : # Now move to using tokenizers from huggingface
     def __init__(self,
                  vocab: dict[int, bytes],
                  merges: list[tuple[bytes, bytes]],
@@ -153,21 +195,5 @@ class Tokenizer() :
         text = total_bytes.decode(errors='replace')
         return text    
 
-
-
-
-
-
-    
-
-# tokenizer = Tokenizer.from_files("./data/TinyStoriesV2-GPT4-train_vocab.json", "./data/TinyStoriesV2-GPT4-train_merges.json")
-
-
-# text = "Hey, I'm NgocQuan, from Vietnam."   
-
-
-# byte = (tokenizer.encode(text))
-
-# print(tokenizer.decode(byte))
         
          
