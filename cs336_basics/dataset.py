@@ -17,8 +17,8 @@ def get_batch(x, batch_size, context_length, device) :
     inputs = np.stack(inputs, axis= 0)
     labels = np.stack(labels, axis= 0)
 
-    inputs = torch.from_numpy(inputs).to(device= device, dtype= torch.int32)
-    labels = torch.from_numpy(labels).to(device= device, dtype= torch.int32)
+    inputs = torch.from_numpy(inputs).to(device= device, dtype= torch.int64)
+    labels = torch.from_numpy(labels).to(device= device, dtype= torch.int64)
     return inputs, labels
 
 

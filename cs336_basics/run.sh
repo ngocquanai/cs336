@@ -1,12 +1,12 @@
 #!/bin/bash -e
 
 #SBATCH --job-name=base# create a short name for your job
-#SBATCH --output=/lustre/scratch/client/movian/research/users/quanpn2/public/cs336/cs336_basics/logs/mbpp%A.out # create a output file
-#SBATCH --error=/lustre/scratch/client/movian/research/users/quanpn2/public/cs336/cs336_basics/logs/mbpp%A.err # create a error file
+#SBATCH --output=/lustre/scratch/client/movian/research/users/quanpn2/public/cs336/cs336_basics/logs/llm.out # create a output file
+#SBATCH --error=/lustre/scratch/client/movian/research/users/quanpn2/public/cs336/cs336_basics/logs/llm.err # create a error file
 #SBATCH --partition=movianr # choose partition
 #SBATCH --gpus-per-node=1
-#SBATCH --cpus-per-task=20
-#SBATCH --mem-per-gpu=40GB
+#SBATCH --cpus-per-task=32
+#SBATCH --mem-per-gpu=128GB
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --time=10-00:00          # total run time limit (DD-HH:MM)
@@ -20,9 +20,9 @@
 module purge
 module load python/miniconda3/miniconda3
 eval "$(conda shell.bash hook)"
+export PYTHONUNBUFFERED=1
 
-
-
+export CUDA_VISIBLE_DEVICES=0
 
 cd /lustre/scratch/client/movian/research/users/quanpn2/public/cs336/
 uv run cs336_basics/train.py

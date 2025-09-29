@@ -23,7 +23,7 @@ def preprocessing(data_path, tokenizer, special_tokens, save_path) :
             ids = tokenizer.encode(text)
             full_ids += ids
 
-    full_ids = np.array(full_ids)
+    full_ids = np.array(full_ids, dtype= np.int32)
     full_ids.tofile(save_path)
     print("SAVED ENCODED DATA, a numpy array contains ids !!!")
 

@@ -1,0 +1,1209 @@
+START
+Start! Hope it work well!
+Test tokenizer: Hello, I'm NgocQuan from Việt Nam! I love training large language model. <|endoftext|>
+Encoded ids contains 25 tokens: [16859, 12, 272, 1952, 29314, 383, 6141, 229, 379, 13940, 156, 120, 186, 84, 18801, 1, 272, 1841, 2999, 1489, 3086, 2612, 14, 177, 0]
+Decoded text: Hello, I'm NgocQuan from Việt Nam! I love training large language model. <|endoftext|>
+Loaded tokenizer!
+Loaded dataset!
+Loaded model!
+Training time !!!
+Loss at step 0: 10.4197
+The capital city of Korea is:
+'Answer: \n\nThe first time is a good-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year-year- <end>'
+--------------------------------------------------
+Eval loss at step 236 is: 6.4613; accuracy: 14.63
+Loss at step 250: 6.733
+Loss at step 500: 6.1452
+The capital city of Korea is:
+'Answer: \n\nThe first of the U.S.S.S.S.S.S.S.S.com/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s/s <end>'
+--------------------------------------------------
+Eval loss at step 736 is: 5.8832; accuracy: 17.65
+Loss at step 750: 5.6824
+Loss at step 1000: 5.5532
+The capital city of Korea is:
+'Answer: \n\nThe New York Times, the United States, and the United States, has been in the United States, and the US, and the United States.\n\nThe United States has been in the United States, and the US, and the US, and the United States, and the United States.\n\nThe United States has been in the United States, and the US, and the US, and the US, and the US, the United States, and the United States. <end>'
+--------------------------------------------------
+Eval loss at step 1236 is: 5.6077; accuracy: 19.02
+Loss at step 1250: 5.6131
+Loss at step 1500: 5.2455
+The capital city of Korea is:
+'Answer: \n\nThe United States is a big deal of the world.\n\nThe United States is a big deal of the world.\n\nThe United States is a big deal of the world.\n\nThe United States is a big deal of the world.\n\nThe United States is a big-day, and the world is a big-time, and the world.\n\nThe world is a big-day, and the world is a good thing.\n\nThe world is <end>'
+--------------------------------------------------
+Eval loss at step 1736 is: 5.4089; accuracy: 20.06
+Loss at step 1750: 5.0657
+Loss at step 2000: 5.0764
+The capital city of Korea is:
+'Answer: \n\nThe city has been a major city of the city, but the city has been a huge part of the city.\n\nThe city has been a major city of the city, but the city has been a huge part of the city.\n\nThe city has been a major city of the city, but the city has been a huge part of the city.\n\nThe city has been a major city of the city, but the city has been a huge number of times. <end>'
+--------------------------------------------------
+Eval loss at step 2236 is: 5.2751; accuracy: 20.810000000000002
+Loss at step 2250: 5.2096
+Loss at step 2500: 5.474
+The capital city of Korea is:
+'Answer: \n\nThe city is now a city of the country, and the city has been a city of the country.\n\nThe city has been a city of the city, and the city has been a city of the city.\n\nThe city has been a city of the city, and the city has been a city of the city.\n\nThe city has been a city of the city, and the city has been a city of the city.\n\nThe city has been a <end>'
+--------------------------------------------------
+Eval loss at step 2736 is: 5.1631; accuracy: 21.52
+Loss at step 2750: 5.0476
+Loss at step 3000: 5.2664
+The capital city of Korea is:
+'Answer: \n\nThe city is a city of the city of the city of the city, which is the city of the city of the city.\n\nThe city is a city of the city, which is the city of the city, the city of the city, the city of the city, the city of the city, the city, the city, and the city of the city.\n\nThe city is a city of the city, where the city is a city of the city, <end>'
+--------------------------------------------------
+Eval loss at step 3236 is: 5.0844; accuracy: 22.040000000000003
+Loss at step 3250: 5.1807
+Loss at step 3500: 5.2273
+The capital city of Korea is:
+'Answer: \n\nThe city of the city is a very small part of the city of the city of the city of the city of the city of the city of the city.\n\nThe city is a very small city of the city of the city of the city of the city of the city of the city of the city.\n\nThe city is a city of the city of the city of the city of the city of the city of the city of the city of the city.\n\n <end>'
+--------------------------------------------------
+Eval loss at step 3736 is: 5.0197; accuracy: 22.45
+Loss at step 3750: 5.2623
+Loss at step 4000: 4.9638
+The capital city of Korea is:
+'Answer: \n\nThe city has been a part of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city.\n\nThe city has been a part of the city of the city of the city of the city of the city of the city of the city.\n\nThe city has been a city of the city of the city of the city of the city.\n\nThe city has been a city of <end>'
+--------------------------------------------------
+Eval loss at step 4236 is: 4.9527; accuracy: 22.81
+Loss at step 4250: 5.0909
+Loss at step 4500: 4.9717
+The capital city of Korea is:
+'Answer: \n\nThe city of the city is the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the <end>'
+--------------------------------------------------
+Eval loss at step 4736 is: 4.917; accuracy: 23.09
+Loss at step 4750: 4.7711
+Loss at step 5000: 4.9044
+The capital city of Korea is:
+'Answer: \n\n"The problem is that the government is not going to be able to do it, and that is not the case. It is not the government of the United States, it is not the United States, it is the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United States, the United <end>'
+--------------------------------------------------
+Eval loss at step 5236 is: 4.8598; accuracy: 23.580000000000002
+Loss at step 5250: 4.8842
+Loss at step 5500: 4.8655
+The capital city of Korea is:
+'Answer: \n\nThe city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city.\n\nThe city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city <end>'
+--------------------------------------------------
+Eval loss at step 5736 is: 4.8147; accuracy: 23.94
+Loss at step 5750: 4.8842
+Loss at step 6000: 4.9266
+The capital city of Korea is:
+'Answer: \n\nThe city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city.\n\nThe city of the city of the city of the city of the city of the city of the city of the city <end>'
+--------------------------------------------------
+Eval loss at step 6236 is: 4.7795; accuracy: 24.310000000000002
+Loss at step 6250: 4.8893
+Loss at step 6500: 4.8706
+The capital city of Korea is:
+'Answer: \n\nThe city of India is a major city in the world, and the city of India is a major city in the world.\n\nThe city of India is a major city in the world, and the city is a major city in the world.\n\nThe city is a city of about $100,000, and the city is expected to be a city of about $100,000.\n\nThe city is expected to be a city of about $100,000, <end>'
+--------------------------------------------------
+Eval loss at step 6736 is: 4.7413; accuracy: 24.59
+Loss at step 6750: 4.6784
+Loss at step 7000: 4.8043
+The capital city of Korea is:
+'Answer:  the world is the world.\n\nThe world is the only country in the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n\nThe world is the world.\n <end>'
+--------------------------------------------------
+Eval loss at step 7236 is: 4.7075; accuracy: 25.09
+Loss at step 7250: 4.7566
+Loss at step 7500: 4.5263
+The capital city of Korea is:
+'Answer: \n\n"We are not going to be able to get a deal with the North Korean government, but we are going to be able to get a deal with the North Korean government," said the official.\n\n"We are going to have to go to the North Korean government and we will be able to get a deal with the North Korean government."\n\nThe new government is also planning to build a new alliance of international relations with the European Union.\n\n"We will be able <end>'
+--------------------------------------------------
+Eval loss at step 7736 is: 4.6859; accuracy: 25.22
+Loss at step 7750: 4.9132
+Loss at step 8000: 4.6895
+The capital city of Korea is:
+'Answer: \n\nThe new government is not the only country in the country.\n\nThe government is not the only country in the country.\n\nThe government is not the only country in the country.\n\nThe government is not the only country in the country.\n\nThe government is not the only country in the country.\n\nThe government is not the only country in the country.\n\nThe government is not the only country in the country.\n\nThe government is not the <end>'
+--------------------------------------------------
+Eval loss at step 8236 is: 4.6472; accuracy: 25.580000000000002
+Loss at step 8250: 4.6378
+Loss at step 8500: 4.4442
+The capital city of Korea is:
+'Answer:  the United States is the only country in the world.\n\nThe United States is the largest country in the world, and the United States is the largest country in the world. The United States is the largest country in the world, and the world is the largest country in the world.\n\nThe United States is the largest country in the world, and the world is the largest country in the world. The United States is the largest country in the world, and the world is the largest <end>'
+--------------------------------------------------
+Eval loss at step 8736 is: 4.6098; accuracy: 25.96
+Loss at step 8750: 4.5154
+Loss at step 9000: 4.4045
+The capital city of Korea is:
+'Answer:  the world is a new country, and it is a new country.\n\nThe new world is a new country, and it is a new country. It is a new country, and it is a new country. It is a new country, and it is a new country.\n\nThe world is a new country, and it is a new country. It is a new country, and it is a new country. It is a new country, and it is a new country. <end>'
+--------------------------------------------------
+Eval loss at step 9236 is: 4.6112; accuracy: 26.090000000000003
+Loss at step 9250: 4.7182
+Loss at step 9500: 4.6465
+The capital city of Korea is:
+'Answer: \n\nThe United States is a major step toward the international community, and it is a very important step forward for the international community.\n\nThe United Nations is a major step forward for the international community, and it is a very important step forward for the international community.\n\nThe United Nations is a major step forward for the international community.\n\nThe United Nations is a major step forward for the international community.\n\nThe United Nations is a major step forward for the international community <end>'
+--------------------------------------------------
+Eval loss at step 9736 is: 4.574; accuracy: 26.25
+Loss at step 9750: 4.5662
+Loss at step 10000: 4.6825
+The capital city of Korea is:
+'Answer: \n\nThe city of China is a city of the world, and it is a place where the city is located.\n\nThe city is located in the city of Kauga, where the city is located, and the city is located.\n\nThe city is located in the city of Kauga, where the city is located.\n\nThe city is located in the city of Kauga, where the city is located, and the city is located.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 10236 is: 4.5631; accuracy: 26.39
+Loss at step 10250: 4.5866
+Loss at step 10500: 4.6606
+The capital city of Korea is:
+'Answer: \n\n“The United States is a great example of the world’s most important economic growth in the world, and the world’s most important economic growth in the world.”\n\n“The world is a great example of the world’s most important economic growth in the world.”\n\n“The world is a great example of the world’s economic growth, economic growth, economic growth, economic growth, economic growth, economic growth, economic growth, economic growth, economic growth, <end>'
+--------------------------------------------------
+Eval loss at step 10736 is: 4.5364; accuracy: 26.619999999999997
+Loss at step 10750: 4.6328
+Loss at step 11000: 4.5763
+The capital city of Korea is:
+'Answer: \n\n“The city is a city of the city of North Korea, where people are being treated by the city of North Korea, and are not allowed to be treated by the city of North Korea. The city is not a city of North Korea, but it is a city of North Korea, where people are not allowed to live in North Korea, and they are not allowed to live in North Korea.\n\n“The city is not a city of North Korea, but it is a <end>'
+--------------------------------------------------
+Eval loss at step 11236 is: 4.5222; accuracy: 26.840000000000003
+Loss at step 11250: 4.5234
+Loss at step 11500: 4.5282
+The capital city of Korea is:
+'Answer: \n\n“We are going to have a lot of money to build a lot of money in the region,” said the president. “We are going to have a lot of money to build a lot of money in the region.”\n\nThe president’s office is expected to take a few months to build a new infrastructure infrastructure.\n\n“We are going to have a lot of money to build a new infrastructure infrastructure,” said the president.\n\n“We are going to have a <end>'
+--------------------------------------------------
+Eval loss at step 11736 is: 4.5039; accuracy: 27.02
+Loss at step 11750: 4.511
+Loss at step 12000: 4.5931
+The capital city of Korea is:
+'Answer:  “We are not going to be able to get a job done by the U.S. government.”\n\nThe U.S. government has been working to improve the economy, and the U.S. government has been working to improve the economy.\n\nThe U.S. government has been working to improve the economy, and the U.S. government has been working to improve the economy.\n\nThe U.S. government has been working to improve the economy and <end>'
+--------------------------------------------------
+Eval loss at step 12236 is: 4.4938; accuracy: 27.060000000000002
+Loss at step 12250: 4.5446
+Loss at step 12500: 4.5007
+The capital city of Korea is:
+'Answer: \n\n"The United States is a major city in the region, and the United States is a major city in the region. The United States is a major city in the region, and the United States is a major city in the region. The United States is a major city in the region, and the United States is a major city in the region. The United States is a major city in the region, and the United States is a major city in the region. The United States is <end>'
+--------------------------------------------------
+Eval loss at step 12736 is: 4.4743; accuracy: 27.27
+Loss at step 12750: 4.2277
+Loss at step 13000: 4.7108
+The capital city of Korea is:
+'Answer: \n\n“The United States has a very strong presence in the region, with the United States and the United States, which has a very strong relationship with the United States. The United States has a strong relationship with the United States, which has been a key contributor to the region’s role in the region. The United States has been a key contributor to the region’s role in the region, and the United States has been a key contributor to the region’s role in the region <end>'
+--------------------------------------------------
+Eval loss at step 13236 is: 4.4639; accuracy: 27.41
+Loss at step 13250: 4.629
+Loss at step 13500: 4.5752
+The capital city of Korea is:
+'Answer: \n\n"We are going to be able to see the future of the country as a whole, and we will be able to see the future of the world."\n\n"We will be able to see the future of the world, and we will see the future of the world."\n\n"We will be able to see the future of the world, and we will see the future of the world."\n\n"We will be able to see the future of the world, and <end>'
+--------------------------------------------------
+Eval loss at step 13736 is: 4.4391; accuracy: 27.61
+Loss at step 13750: 4.3331
+Loss at step 14000: 4.2229
+The capital city of Korea is:
+'Answer: \n\nThe city of the city is a city of the city\'s most notorious and most dangerous city.\n\nThe city\'s mayor, who is now a member of the city\'s city council, said the city\'s mayor\'s office was "a great city."\n\n"We are a city of people who are in the city\'s most dangerous city," he said. "We are a city of people who are in the city\'s most dangerous city."\n\nThe city\'s mayor, <end>'
+--------------------------------------------------
+Eval loss at step 14236 is: 4.4299; accuracy: 27.689999999999998
+Loss at step 14250: 4.4148
+Loss at step 14500: 4.4215
+The capital city of Korea is:
+'Answer: \n\n"We are not going to be able to get a job, but we are going to be able to get a job, and we are going to be able to get a job, and we are going to be able to get a job, and we are going to be able to get a job, and we are going to be able to get a job, and we are going to be able to get a job, and we are going to be able to get a job, <end>'
+--------------------------------------------------
+Eval loss at step 14736 is: 4.4238; accuracy: 27.72
+Loss at step 14750: 4.1785
+Loss at step 15000: 4.5334
+The capital city of Korea is:
+'Answer: \n\nThe United States is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country <end>'
+--------------------------------------------------
+Eval loss at step 15236 is: 4.4189; accuracy: 27.85
+Loss at step 15250: 4.3713
+Loss at step 15500: 4.5891
+The capital city of Korea is:
+'Answer: \n\nThe city is a city of about 1,000 people, and the city is in the midst of a crisis of crisis.\n\nThe city is expected to be a major city in the city, where it will be a major city in the city.\n\nThe city is expected to be a major city in the city, where it will be a major city in the city.\n\nThe city is expected to be a major city in the city, where it will be a <end>'
+--------------------------------------------------
+Eval loss at step 15736 is: 4.4021; accuracy: 28.02
+Loss at step 15750: 4.454
+Loss at step 16000: 4.4323
+The capital city of Korea is:
+"Answer: \n\nThe city has a long history of the city's future.\n\nThe city has a long history of the city's future.\n\nThe city has a long history of the city's future.\n\nThe city has a long history of the city's future.\n\nThe city has a long history of the city's future.\n\nThe city has a long history of the city's future.\n\nThe city has a long history of the city's future.\n <end>"
+--------------------------------------------------
+Eval loss at step 16236 is: 4.3969; accuracy: 28.000000000000004
+Loss at step 16250: 4.3268
+Loss at step 16500: 4.4377
+The capital city of Korea is:
+'Answer: \n\n“We are not going to be able to see the world as a whole, but we are not going to see the world as a whole. We are going to see the world as a whole, and we are going to see the world as a whole. We are going to see the world as a whole, and we are going to see the world as a whole. We are going to see the world as a whole, and we are going to see the world as a whole <end>'
+--------------------------------------------------
+Eval loss at step 16736 is: 4.3883; accuracy: 28.04
+Loss at step 16750: 4.4472
+Loss at step 17000: 4.4694
+The capital city of Korea is:
+'Answer: \n\nThe United States has been in the past for years, and the United States has been in the past for years.\n\nThe United States has been in the past for years, and has been in the past for years.\n\nThe United States has been in the past for years, and has been in the past for years.\n\nThe United States has been in the past for years, and has been in the past for years.\n\nThe United States has been in <end>'
+--------------------------------------------------
+Eval loss at step 17236 is: 4.3726; accuracy: 28.249999999999996
+Loss at step 17250: 4.299
+Loss at step 17500: 4.4713
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country that is not a country that is not a country.\n\nThe United States is a country that is not a country that is not a country.\n\nThe United States is a country that is not a country that is not a country.\n\nThe United States is a country that is not a country that is not a country.\n\nThe United States is a country that is not a country that is not a country.\n\nThe United <end>'
+--------------------------------------------------
+Eval loss at step 17736 is: 4.364; accuracy: 28.349999999999998
+Loss at step 17750: 4.3239
+Loss at step 18000: 4.1979
+The capital city of Korea is:
+'Answer: \n\nThe city of Korea is not the only country of Korea, but the United States.\n\nThe city of Korea is the largest city in the world.\n\nThe city of Korea is the largest city in the world.\n\nThe city of Korea is the largest city in the world.\n\nThe city of Korea is the largest city in the world.\n\nThe city of Korea is the largest city in the world.\n\nThe city of Korea is the largest city <end>'
+--------------------------------------------------
+Eval loss at step 18236 is: 4.3517; accuracy: 28.51
+Loss at step 18250: 4.3567
+Loss at step 18500: 4.2773
+The capital city of Korea is:
+'Answer: \n\nThe United States is not the only country where the United States is not the only country where the United States is the world’s largest city. The United States is the world’s largest city of the world. The United States is the world’s largest city of the world. The United States is the world’s largest city of the world. The United States is the world’s largest city of the world. The United States is the world’s largest city of the <end>'
+--------------------------------------------------
+Eval loss at step 18736 is: 4.3448; accuracy: 28.560000000000002
+Loss at step 18750: 4.2537
+Loss at step 19000: 4.4008
+The capital city of Korea is:
+'Answer: \n\n“We are not going to be able to get the first place in the world, but we are going to be able to get the first place in the world. We are going to be able to get the first place in the world, and we are going to be able to get the first place in the world. We are going to be able to get the first place in the world, and we are going to be able to get the first place in the world. We are <end>'
+--------------------------------------------------
+Eval loss at step 19236 is: 4.325; accuracy: 28.71
+Loss at step 19250: 4.5509
+Loss at step 19500: 4.3725
+The capital city of Korea is:
+'Answer: \n\nThe city is not a city of about 1,000 people, but it is a city of about 1,000 people.\n\nThe city is also a city of about 1,000 people, according to the city.\n\nThe city is also a city of about 1,000 people, according to the city.\n\nThe city is also a city of about 1,000 people, according to the city.\n\nThe city is also a city of about 1, <end>'
+--------------------------------------------------
+Eval loss at step 19736 is: 4.3399; accuracy: 28.64
+Loss at step 19750: 4.5156
+Loss at step 20000: 4.2961
+The capital city of Korea is:
+'Answer: \n\n“We are not going to be able to get to the United States. We are not going to be able to get to the United States. We are not going to be able to get to the United States. We are not going to be able to get to the United States. We are not going to be able to get to the United States. We are not going to be able to get to the United States. We are not going to be able to get to the United <end>'
+--------------------------------------------------
+Eval loss at step 20236 is: 4.3286; accuracy: 28.68
+Loss at step 20250: 4.3636
+Loss at step 20500: 4.2019
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country that is not only a country, but a country that is not a country, and is a country that is not a country.\n\nThe United States is a country that is not a country that is not a country, and is not a country that is not a country.\n\nThe United States is a country that is not a country that is not a country, and is not a country that is not a country.\n\nThe United States <end>'
+--------------------------------------------------
+Eval loss at step 20736 is: 4.3094; accuracy: 28.860000000000003
+Loss at step 20750: 4.3639
+Loss at step 21000: 4.467
+The capital city of Korea is:
+'Answer: \n\n“We are not going to be able to make a decision on the matter. We are going to have a lot of opportunities to do that.”\n\n“We are going to have a lot of opportunities to do that.”\n\n“We are going to have a lot of opportunities to do that.”\n\n“We are going to have a lot of opportunities to do that.”\n\n“We are going to have a lot of opportunities to do that.”\n\n“We <end>'
+--------------------------------------------------
+Eval loss at step 21236 is: 4.3092; accuracy: 28.799999999999997
+Loss at step 21250: 4.2291
+Loss at step 21500: 4.4054
+The capital city of Korea is:
+'Answer: \n\nThe city of Tokyo is a city of about 700,000 people.\n\nThe city of Tokyo is a city of about 700,000 people.\n\nThe city is a city of about 700,000 people.\n\nThe city is a city of about 700,000 people.\n\nThe city is a city of about 700,000 people.\n\nThe city is a city of about 700,000 people.\n\nThe city is a city of about 700, <end>'
+--------------------------------------------------
+Eval loss at step 21736 is: 4.3008; accuracy: 28.92
+Loss at step 21750: 4.3438
+Loss at step 22000: 4.2858
+The capital city of Korea is:
+'Answer: \n\n“We are not going to be able to get to the next level of the population, but we are not going to be able to get to the next level of the population. We are not going to be able to get to the next level of the population. We are not going to be able to get to the next level of the population. We are not going to be able to get to the next level of the population. We are not going to be able to get to <end>'
+--------------------------------------------------
+Eval loss at step 22236 is: 4.2987; accuracy: 28.970000000000002
+Loss at step 22250: 4.2699
+Loss at step 22500: 4.2709
+The capital city of Korea is:
+'Answer: \n\nThe city of Korea is a city of about 1,000 people, and is a city of about 1,000 people.\n\nThe city is a city of about 1,000 people, and is a city of about 1,000 people.\n\nThe city is a city of about 1,000 people, and is a city of about 1,000 people.\n\nThe city is a city of about 1,000 people, and is a city of about 1, <end>'
+--------------------------------------------------
+Eval loss at step 22736 is: 4.3001; accuracy: 28.98
+Loss at step 22750: 4.451
+Loss at step 23000: 4.2392
+The capital city of Korea is:
+'Answer: \n\nThe United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of people, and the United States is a nation of <end>'
+--------------------------------------------------
+Eval loss at step 23236 is: 4.2784; accuracy: 29.189999999999998
+Loss at step 23250: 4.3002
+Loss at step 23500: 4.2919
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that is not a country. It is a country that <end>'
+--------------------------------------------------
+Eval loss at step 23736 is: 4.2783; accuracy: 29.189999999999998
+Loss at step 23750: 4.5184
+Loss at step 24000: 4.3471
+The capital city of Korea is:
+'Answer: \n\nThe United States is a major city in the region, and is one of the most powerful cities in the world. The United States is a major city in the region, and the United States is a major city in the region. The United States is a major city in the region, and the United States is a major city in the region. The United States is a major city in the region, and the United States is a major city in the region. The United States is a <end>'
+--------------------------------------------------
+Eval loss at step 24236 is: 4.2727; accuracy: 29.15
+Loss at step 24250: 4.3483
+Loss at step 24500: 4.3256
+The capital city of Korea is:
+'Answer: \n\nThe United States is a nation of people who are not born in the United States. The United States is a nation of people who are born in the United States. The United States is a nation of people who are born in the United States. The United States is a nation of people who are born in the United States. The United States is a nation of people who are born in the United States. The United States is a nation of people who are born in the United States. <end>'
+--------------------------------------------------
+Eval loss at step 24736 is: 4.2529; accuracy: 29.42
+Loss at step 24750: 4.3632
+Loss at step 25000: 4.4398
+The capital city of Korea is:
+'Answer: \n\nThe first step in the history of the world is to create a new, more sustainable and sustainable system of governance. The first step is to create a new system of governance and the development of the new system of governance. The first step is to create a new system of governance and the development of the new system of governance. The first step is to create a new system of governance and the development of the new system of governance. The first step is to create a new system of governance <end>'
+--------------------------------------------------
+Eval loss at step 25236 is: 4.26; accuracy: 29.310000000000002
+Loss at step 25250: 3.8688
+Loss at step 25500: 4.1355
+The capital city of Korea is:
+'Answer: \n\n“The city is a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city of people who are not a city <end>'
+--------------------------------------------------
+Eval loss at step 25736 is: 4.248; accuracy: 29.42
+Loss at step 25750: 4.369
+Loss at step 26000: 4.2322
+The capital city of Korea is:
+'Answer: \n\nThe city of Tokyo is a city of about 40,000 people.\n\nThe city is a city of about 40,000 people.\n\nThe city is a city of about 40,000 people.\n\nThe city is a city of about 40,000 people.\n\nThe city is a city of about 40,000 people.\n\nThe city is a city of about 40,000 people.\n\nThe city is a city of about 40,000 people <end>'
+--------------------------------------------------
+Eval loss at step 26236 is: 4.2477; accuracy: 29.42
+Loss at step 26250: 4.3591
+Loss at step 26500: 4.4716
+The capital city of Korea is:
+'Answer: \n\nThe country’s largest city of about 2,000 people, according to the Ministry of Defense. The country’s largest city is the largest city in the country. The country’s largest city is the largest city in the country. The country’s largest city is the largest city in the country.\n\nThe city’s largest city is the largest city in the country. The city is the largest city in the country. The city is the largest city in the country <end>'
+--------------------------------------------------
+Eval loss at step 26736 is: 4.2375; accuracy: 29.57
+Loss at step 26750: 4.4415
+Loss at step 27000: 4.0731
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country that is not the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. It is the world’s largest country. <end>'
+--------------------------------------------------
+Eval loss at step 27236 is: 4.2329; accuracy: 29.56
+Loss at step 27250: 4.2875
+Loss at step 27500: 4.2937
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country that has been a part of the United States.\n\nThe United States is a country that has been a part of the United States.\n\nThe United States has a history of being a country that has been a part of the United States.\n\nThe United States has a history of being a country that has been a part of the United States.\n\nThe United States has a history of being a country that has been a part of the <end>'
+--------------------------------------------------
+Eval loss at step 27736 is: 4.2368; accuracy: 29.5
+Loss at step 27750: 4.0679
+Loss at step 28000: 4.3601
+The capital city of Korea is:
+'Answer: \n\nThe United States is the only country in the world to have a nuclear weapon.\n\nThe United States is the only country in the world to have a nuclear weapon.\n\nThe United States is the only country in the world to have nuclear weapons.\n\nThe United States is the only country in the world to have nuclear weapons.\n\nThe United States is the only country in the world to have nuclear weapons.\n\nThe United States is the only country in the world <end>'
+--------------------------------------------------
+Eval loss at step 28236 is: 4.2275; accuracy: 29.659999999999997
+Loss at step 28250: 4.3321
+Loss at step 28500: 4.2593
+The capital city of Korea is:
+'Answer: \n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations.\n\nThe United States is a nation of nations. <end>'
+--------------------------------------------------
+Eval loss at step 28736 is: 4.2246; accuracy: 29.67
+Loss at step 28750: 4.1749
+Loss at step 29000: 4.1341
+The capital city of Korea is:
+'Answer: \n\nThe city of Yun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-Tun-T <end>'
+--------------------------------------------------
+Eval loss at step 29236 is: 4.2213; accuracy: 29.68
+Loss at step 29250: 4.2083
+Loss at step 29500: 4.2145
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Tokyo, which is the capital city of Tokyo.\n\nThe city of Tokyo is the capital city of Tokyo, which is the capital city of Tokyo.\n\nThe city of Tokyo is the capital city of Tokyo.\n\nThe city of Tokyo is the capital city of Tokyo.\n\nThe city of Tokyo is the capital city <end>'
+--------------------------------------------------
+Eval loss at step 29736 is: 4.2091; accuracy: 29.81
+Loss at step 29750: 4.0331
+Loss at step 30000: 4.2293
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of Seoul. The city is the capital city of Seoul. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital city of Tokyo. The city is the capital <end>'
+--------------------------------------------------
+Eval loss at step 30236 is: 4.2088; accuracy: 29.830000000000002
+Loss at step 30250: 4.3105
+Loss at step 30500: 4.1128
+The capital city of Korea is:
+'Answer: \n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader.\n\nThe United States is a global leader <end>'
+--------------------------------------------------
+Eval loss at step 30736 is: 4.2012; accuracy: 29.970000000000002
+Loss at step 30750: 4.3214
+Loss at step 31000: 4.0432
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the largest city in the world, with a population of about 100,000. The city is the largest city in the world, with a population of about 100,000. The city is the largest city in the world, with a population of about 100,000. The city is the largest city in the world, with a population of about 100,000.\n\nThe city is the largest city in the world, with a population of about 100, <end>'
+--------------------------------------------------
+Eval loss at step 31236 is: 4.2018; accuracy: 29.93
+Loss at step 31250: 4.2885
+Loss at step 31500: 4.2934
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is not a city of Korea, but a city of Korea.\n\nThe city of Seoul is a city of Korea, and it is not a city of Korea.\n\nThe city of Seoul is a city of Korea, and it is not a city of Korea.\n\nThe city of Seoul is a city of Korea.\n\nThe city of Seoul is a city of Korea.\n\nThe city of Seoul is a city of Korea.\n\n <end>'
+--------------------------------------------------
+Eval loss at step 31736 is: 4.2027; accuracy: 29.770000000000003
+Loss at step 31750: 4.1049
+Loss at step 32000: 4.0346
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 3,000 people.\n\nThe city of Seoul is a city of about 3,000 people.\n\nThe city of Seoul is a city of about 3,000 people.\n\nThe city of Seoul is a city of about 3,000 people.\n\nThe city of Seoul is a city of about 3,000 people.\n\nThe city of Seoul is a city of about 3,000 people.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 32236 is: 4.1939; accuracy: 29.98
+Loss at step 32250: 4.0909
+Loss at step 32500: 3.9877
+The capital city of Korea is:
+'Answer: \n\n“The city of Seoul is a city of the world that is very much in the middle of the world. The city of Seoul is a city of the world that is very much in the middle of the world. The city of Seoul is a city of the world that is very much in the middle of the world. The city of Seoul is a city of the world that is very much in the middle of the world. The city of Seoul is a city of the world that is <end>'
+--------------------------------------------------
+Eval loss at step 32736 is: 4.189; accuracy: 30.04
+Loss at step 32750: 4.1942
+Loss at step 33000: 4.0993
+The capital city of Korea is:
+'Answer: \n\nThe city is a city of about 1,000 square meters (1,000 meters) long, and the city is a city of about 1,000 meters (1,000 meters) long.\n\nThe city is a city of about 1,000 meters (1,000 meters) long, and the city is a city of about 1,000 meters (1,000 meters) long.\n\nThe city is a city of about 1,000 meters (1, <end>'
+--------------------------------------------------
+Eval loss at step 33236 is: 4.1824; accuracy: 30.009999999999998
+Loss at step 33250: 4.1164
+Loss at step 33500: 4.2863
+The capital city of Korea is:
+"Answer: \n\nThe city of Seoul is the world's largest city.\n\nThe city of Seoul is the world's largest city.\n\nThe city of Seoul is the world's largest city.\n\nThe city is the world's largest city.\n\nThe city is the world's largest city.\n\nThe city is the world's largest city.\n\nThe city is the world's largest city.\n\nThe city is the world's largest city.\n\nThe city is <end>"
+--------------------------------------------------
+Eval loss at step 33736 is: 4.1788; accuracy: 30.080000000000002
+Loss at step 33750: 4.1198
+Loss at step 34000: 4.1696
+The capital city of Korea is:
+'Answer:  the country’s largest city.\n\nThe city is also the largest city in the world, with a population of about 1.5 million.\n\nThe city is the largest city in the world, with a population of about 1.5 million.\n\nThe city is the largest city in the world, with a population of about 1.5 million.\n\nThe city is the largest city in the world, with a population of about 1.5 million.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 34236 is: 4.1651; accuracy: 30.259999999999998
+Loss at step 34250: 4.2547
+Loss at step 34500: 4.1326
+The capital city of Korea is:
+'Answer:  the city of Seoul, which is the capital city of Seoul, is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the <end>'
+--------------------------------------------------
+Eval loss at step 34736 is: 4.1791; accuracy: 30.130000000000003
+Loss at step 34750: 4.2211
+Loss at step 35000: 3.9494
+The capital city of Korea is:
+'Answer: \n\n“The city is a city of people who are not in the city. They are not in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in the city. They are in <end>'
+--------------------------------------------------
+Eval loss at step 35236 is: 4.1729; accuracy: 30.14
+Loss at step 35250: 4.2471
+Loss at step 35500: 3.8908
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital of the city of Taipei, the capital of the city of Taipei.\n\nThe city of Taipei is the capital of the city of Taipei, the capital of Taipei.\n\nThe city of Taipei is the capital of Taipei.\n\nThe city of Taipei is the capital of Taipei.\n\nThe city of Taipei is the capital of Taipe <end>'
+--------------------------------------------------
+Eval loss at step 35736 is: 4.1684; accuracy: 30.240000000000002
+Loss at step 35750: 4.1381
+Loss at step 36000: 4.3334
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of Seoul, where the city is located. The city is located in the city of Seoul, where the city is located. The city is located in the city of Taipei.\n\nThe city is located in the city of Taipei.\n\nThe city is located in the city of Taipei.\n\nThe city is located in the city of Taipei.\n\nThe city is located in the city of Tai <end>'
+--------------------------------------------------
+Eval loss at step 36236 is: 4.1638; accuracy: 30.220000000000002
+Loss at step 36250: 4.196
+Loss at step 36500: 4.2287
+The capital city of Korea is:
+'Answer:  the United States, the United States, and the United States.\n\nThe United States, the United States, and the United States, have been fighting for the United States, and the United States, the United States, the United States, and the United States.\n\nThe United States, the United States, and the United States, have been fighting for the United States, and the United States, the United States, the United States, and the United States.\n\nThe United <end>'
+--------------------------------------------------
+Eval loss at step 36736 is: 4.1608; accuracy: 30.320000000000004
+Loss at step 36750: 4.1433
+Loss at step 37000: 4.2189
+The capital city of Korea is:
+'Answer: \n\n“The city is a city of Seoul, and it is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a city of Seoul. It is a <end>'
+--------------------------------------------------
+Eval loss at step 37236 is: 4.1568; accuracy: 30.240000000000002
+Loss at step 37250: 4.13
+Loss at step 37500: 4.2766
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of Korea, and it is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is a city of Korea. It is <end>'
+--------------------------------------------------
+Eval loss at step 37736 is: 4.1445; accuracy: 30.409999999999997
+Loss at step 37750: 4.1574
+Loss at step 38000: 4.1028
+The capital city of Korea is:
+'Answer: \n\nThe country’s most important ally, the United States, is the United States, and the United States is the world’s largest ally.\n\nThe United States is the world’s largest ally, and the United States is the world’s largest ally.\n\nThe United States is the world’s largest ally, and the United States is the world’s largest ally.\n\nThe United States is the world’s largest ally, and the United States is <end>'
+--------------------------------------------------
+Eval loss at step 38236 is: 4.1556; accuracy: 30.380000000000003
+Loss at step 38250: 4.0642
+Loss at step 38500: 4.037
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the first country to have a nuclear power.\n\nThe country is the first country to have a nuclear power.\n\nThe country is the first country to have nuclear power.\n\nThe country is the first country to have nuclear power.\n\nThe country is the first country to have nuclear power.\n\nThe country is the first country to have nuclear power.\n\nThe country is the first country to have nuclear power.\n\nThe country <end>'
+--------------------------------------------------
+Eval loss at step 38736 is: 4.1459; accuracy: 30.43
+Loss at step 38750: 3.9958
+Loss at step 39000: 4.2503
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of the city of Seoul, which is the capital of the city of Seoul.\n\nThe city of Seoul is the capital of the city of Seoul.\n\nThe city of Seoul is the capital of the city of Seoul.\n\nThe city of Seoul is the capital of the city of Seoul.\n\nThe city of Seoul is the capital of the city of Seoul.\n\nThe city of Seoul is the capital of the city of Seoul <end>'
+--------------------------------------------------
+Eval loss at step 39236 is: 4.1447; accuracy: 30.470000000000002
+Loss at step 39250: 4.1606
+Loss at step 39500: 4.0821
+The capital city of Korea is:
+'Answer: \n\n“We are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have a community of people who are very happy to have <end>'
+--------------------------------------------------
+Eval loss at step 39736 is: 4.1396; accuracy: 30.43
+Loss at step 39750: 4.3526
+Loss at step 40000: 3.8761
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is a city of Seoul.\n\nThe capital city of Seoul is <end>'
+--------------------------------------------------
+Eval loss at step 40236 is: 4.1387; accuracy: 30.5
+Loss at step 40250: 4.0382
+Loss at step 40500: 4.0373
+The capital city of Korea is:
+'Answer: \n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe state of Korea is a state of affairs.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 40736 is: 4.1335; accuracy: 30.5
+Loss at step 40750: 3.989
+Loss at step 41000: 4.1081
+The capital city of Korea is:
+'Answer: \n\nThe city of Korea is a country that has been in the spotlight since the war began.\n\nThe city of Korea is a country that has been in the spotlight since the war began.\n\nThe city of Korea is a country that has been in the spotlight since the war began.\n\nThe city of Korea is a country that has been in the spotlight since the war began.\n\nThe city of Korea is a country that has been in the spotlight since the war began <end>'
+--------------------------------------------------
+Eval loss at step 41236 is: 4.1288; accuracy: 30.599999999999998
+Loss at step 41250: 4.2259
+Loss at step 41500: 3.803
+The capital city of Korea is:
+'Answer: \n\n“The city of Seoul is a city of Kim Jong-un, which is the capital city of Seoul. The city of Seoul is the capital city of Seoul. The city of Seoul is the capital city of Seoul. The city of Seoul is the capital city of Seoul. The city of Seoul is the capital city of Seoul. The city of Seoul is the capital city of Seoul. The city of Seoul is the capital city of Seoul. The city of Seoul is the capital city of <end>'
+--------------------------------------------------
+Eval loss at step 41736 is: 4.1282; accuracy: 30.56
+Loss at step 41750: 4.0265
+Loss at step 42000: 3.9838
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean origin. It is a city of Korean <end>'
+--------------------------------------------------
+Eval loss at step 42236 is: 4.1205; accuracy: 30.659999999999997
+Loss at step 42250: 4.038
+Loss at step 42500: 4.1787
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul, which is <end>'
+--------------------------------------------------
+Eval loss at step 42736 is: 4.1272; accuracy: 30.64
+Loss at step 42750: 4.327
+Loss at step 43000: 4.0867
+The capital city of Korea is:
+'Answer:  the United States, the United States, and the United States.\n\nThe United States is the largest city in North Korea, and the United States is the largest city in North Korea. The United States is the largest city in North Korea, and the largest city in North Korea.\n\nThe United States is the largest city in North Korea, and the largest city in North Korea.\n\nThe United States is the largest city in North Korea, and the largest city in North Korea. <end>'
+--------------------------------------------------
+Eval loss at step 43236 is: 4.1221; accuracy: 30.709999999999997
+Loss at step 43250: 4.0105
+Loss at step 43500: 4.2693
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the capital city of Seoul.\n\nThe city of Seoul is the <end>'
+--------------------------------------------------
+Eval loss at step 43736 is: 4.1036; accuracy: 30.959999999999997
+Loss at step 43750: 4.111
+Loss at step 44000: 3.9345
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is located in the city of Seoul, Seoul, and Seoul.\n\nThe city of Seoul is located in the city of Seoul.\n\nThe city of Seoul is located in the city of Seoul.\n\nThe city of Seoul is located in the city of Seoul.\n\nThe city of Seoul is located in the city of Seoul.\n\nThe city of Seoul is located in the city of Seoul.\n\nThe city of Seoul is located in the <end>'
+--------------------------------------------------
+Eval loss at step 44236 is: 4.1047; accuracy: 30.73
+Loss at step 44250: 4.3447
+Loss at step 44500: 4.2318
+The capital city of Korea is:
+'Answer:  the city of the city of the city of Yongongong, the city of Yongongong, is the capital city of Yongongong.\n\nThe city is the capital city of Yongongong, the city of Yongongong, and the city of Yongongongong, the city of Yongongongong, is the capital city of Yongongongong.\n\nThe city is the capital city of Yongongongong, <end>'
+--------------------------------------------------
+Eval loss at step 44736 is: 4.1112; accuracy: 30.740000000000002
+Loss at step 44750: 4.0251
+Loss at step 45000: 4.1152
+The capital city of Korea is:
+'Answer: \n\nThe city of Kimura, a city of about 1,000 people, is the largest city in the world.\n\nThe city of Kimura is the capital city of Kimura, the capital city of Kimura, and the capital city of Kimura is the capital city of Kimura.\n\nThe city of Kimura is the capital city of Kimura, the capital city of Kimura, and the capital city of Kimura is the capital city of Kimura. <end>'
+--------------------------------------------------
+Eval loss at step 45236 is: 4.1048; accuracy: 30.769999999999996
+Loss at step 45250: 4.298
+Loss at step 45500: 3.8974
+The capital city of Korea is:
+'Answer:  the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul, the city of Seoul <end>'
+--------------------------------------------------
+Eval loss at step 45736 is: 4.1032; accuracy: 30.869999999999997
+Loss at step 45750: 4.0548
+Loss at step 46000: 3.9816
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the largest city in the country, and is the largest city in the country.\n\nThe city is the largest city in the country, with about 1.5 million residents.\n\nThe city is the largest city in the country, with about 1.5 million residents.\n\nThe city is the largest city in the country, with about 1.5 million residents.\n\nThe city is the largest city in the country, with about 1. <end>'
+--------------------------------------------------
+Eval loss at step 46236 is: 4.1092; accuracy: 30.73
+Loss at step 46250: 4.0367
+Loss at step 46500: 4.0906
+The capital city of Korea is:
+'Answer: \n\n“The capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\n“The capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\n“The city is the capital city of Seoul, and the city is the capital city of Seoul.\n\n“The city is the capital city of Seoul, and the city is the capital city of Seoul <end>'
+--------------------------------------------------
+Eval loss at step 46736 is: 4.1009; accuracy: 30.819999999999997
+Loss at step 46750: 4.0802
+Loss at step 47000: 3.9226
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is a city of about 300,000 people, and the capital city of the city is a city of about 300,000 people.\n\nThe capital city of Pyongyang is the capital city of the city of Kimberly, a city of about 300,000 people.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the <end>'
+--------------------------------------------------
+Eval loss at step 47236 is: 4.1011; accuracy: 30.81
+Loss at step 47250: 4.3274
+Loss at step 47500: 4.1748
+The capital city of Korea is:
+'Answer: \n\nThe capital city of the capital city of Seoul is a city of the city of Kimi, the capital city of the city of Kimi.\n\nThe capital city of Kimi is the capital city of Kimi, the capital city of Kimi.\n\nThe capital city of Kimi is the capital city of Kimi.\n\nThe capital city of Kimi is the capital city of Kimi.\n\nThe capital city of Kimi is the capital city of <end>'
+--------------------------------------------------
+Eval loss at step 47736 is: 4.0915; accuracy: 31.03
+Loss at step 47750: 4.0758
+Loss at step 48000: 4.0167
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city <end>'
+--------------------------------------------------
+Eval loss at step 48236 is: 4.091; accuracy: 31.009999999999998
+Loss at step 48250: 3.9727
+Loss at step 48500: 4.0763
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is a city of Kim Jong Un, which is a city of Kim Jong Un.\n\nThe city of Kim Jong Un is a city of Kim Jong Un, which is a city of Kim Jong Un.\n\nThe city of Kim Jong Un is a city of Kim Jong Un, which is a city of Kim Jong Un.\n\nThe city of Kim Jong Un is a city of Kim Jong Un, which is a city of Kim Jong Un.\n <end>'
+--------------------------------------------------
+Eval loss at step 48736 is: 4.0936; accuracy: 30.89
+Loss at step 48750: 4.4503
+Loss at step 49000: 4.1141
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The capital city of Pyongyang is the capital city of Pyongyang. The <end>'
+--------------------------------------------------
+Eval loss at step 49236 is: 4.0911; accuracy: 31.03
+Loss at step 49250: 3.9843
+Loss at step 49500: 4.1463
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the largest city in the world, and the city is the largest city in the world. The city is the largest city in the world, and the city is the largest city in the world.\n\nThe city is the largest city in the world, with a population of more than 1,000,000. The city is the largest city in the world, with a population of more than 1,000.\n\nThe city is the largest city in <end>'
+--------------------------------------------------
+Eval loss at step 49736 is: 4.0888; accuracy: 30.919999999999998
+Loss at step 49750: 3.9451
+Loss at step 50000: 4.1918
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the capital city of Pyongyang, the <end>'
+--------------------------------------------------
+Eval loss at step 50236 is: 4.0867; accuracy: 30.98
+Loss at step 50250: 3.9169
+Loss at step 50500: 4.0122
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is the largest city in the world.\n\nThe capital city of Seoul is the largest city in the world.\n\nThe capital city of Seoul is the largest city in the world.\n\nThe capital city of Seoul is the largest city in the world.\n\nThe capital city of Seoul is the largest city in the world.\n\nThe capital city of Seoul is the largest city in the world.\n\nThe capital city of Seoul is the <end>'
+--------------------------------------------------
+Eval loss at step 50736 is: 4.0839; accuracy: 31.069999999999997
+Loss at step 50750: 3.9725
+Loss at step 51000: 4.1175
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is located in the east of the capital city of Yuchek, the capital city of Yuchek, in the east of the capital city of Yuchek.\n\nThe city of Yuchek is located in the west of the city of Yuchek, the capital city of Yuchek.\n\nThe city of Yuchek is located in the west of Yuchek, the capital city of <end>'
+--------------------------------------------------
+Eval loss at step 51236 is: 4.0921; accuracy: 30.9
+Loss at step 51250: 4.0489
+Loss at step 51500: 4.2053
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the most important city in the world. The city is the most important city in the world. The city is the most important city in the world. The city is the most important city in the world. The city is the most important city in the world. The city is the most important city in the world. The city is the most important city in the world. The city is the most important city in the world. The city is the most important city <end>'
+--------------------------------------------------
+Eval loss at step 51736 is: 4.0773; accuracy: 31.180000000000003
+Loss at step 51750: 4.0666
+Loss at step 52000: 4.2598
+The capital city of Korea is:
+'Answer: \n\nThe country’s capital, the country’s capital, is the country’s capital, and the country’s capital, the country’s capital, is the country’s capital.\n\nThe country’s capital, the country’s capital, is the country’s capital, and the country’s capital, the country’s capital, is the country’s capital.\n\nThe country’s capital, the country’s capital, is the country <end>'
+--------------------------------------------------
+Eval loss at step 52236 is: 4.075; accuracy: 31.180000000000003
+Loss at step 52250: 4.141
+Loss at step 52500: 4.0575
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of the world, and the city of the world is the capital city of the world.\n\nThe city of the world is the capital city of the world, and the city of the world is the capital city of the world.\n\nThe city of the world is the capital city of the world, and the city of the world is the capital city of the world.\n\nThe city of the world is the capital city of the <end>'
+--------------------------------------------------
+Eval loss at step 52736 is: 4.0766; accuracy: 31.09
+Loss at step 52750: 4.141
+Loss at step 53000: 4.0144
+The capital city of Korea is:
+'Answer: \n\n“We are not going to be able to get a lot of the money we need to get a lot of money to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get the money we need to get <end>'
+--------------------------------------------------
+Eval loss at step 53236 is: 4.0757; accuracy: 31.130000000000003
+Loss at step 53250: 3.9958
+Loss at step 53500: 3.9141
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country of the same name, and the United States is a country of the same name.\n\nThe United States is a country of the same name, and the United States is a country of the same name.\n\nThe United States is a country of the same name, and the United States is a country of the same name.\n\nThe United States is a country of the same name, and the United States is a country of the same name <end>'
+--------------------------------------------------
+Eval loss at step 53736 is: 4.0664; accuracy: 31.230000000000004
+Loss at step 53750: 4.1552
+Loss at step 54000: 4.2246
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 2,000 people, and is the largest city in the world.\n\nThe city of Seoul is the largest city in the world, with about 2,000 people.\n\nThe city of Seoul is the largest city in the world, with about 2,000 people.\n\nThe city of Seoul is the largest city in the world, with about 2,000 people.\n\nThe city of Seoul is the largest city in <end>'
+--------------------------------------------------
+Eval loss at step 54236 is: 4.0678; accuracy: 31.22
+Loss at step 54250: 4.0026
+Loss at step 54500: 3.9973
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city <end>'
+--------------------------------------------------
+Eval loss at step 54736 is: 4.0612; accuracy: 31.25
+Loss at step 54750: 4.1365
+Loss at step 55000: 3.9691
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of Korean people, and the city of Seoul is a city of Korean people. It is a city of Korean people, and it is a city of Korean people. It is a city of Korean people, and it is a city of Korean people. It is a city of Korean people, and it is a city of Korean people. It is a city of Korean people. It is a city of Korean people. It is a city of Korean people <end>'
+--------------------------------------------------
+Eval loss at step 55236 is: 4.0629; accuracy: 31.28
+Loss at step 55250: 4.0829
+Loss at step 55500: 4.0812
+The capital city of Korea is:
+'Answer: \n\n“The Chinese government is not a government that is not a government. We are not a government that is not a government. We are not a government that is not a government. We are not a government that is not a government. We are not a government that is not a government. We are not a government that is not a government. We are not a government that is not a government. We are not a government that is not a government. We are not a government that <end>'
+--------------------------------------------------
+Eval loss at step 55736 is: 4.0653; accuracy: 31.259999999999998
+Loss at step 55750: 4.2215
+Loss at step 56000: 4.1189
+The capital city of Korea is:
+'Answer: \n\nThe government is not a government entity, and the government is not a government entity.\n\nThe government is not a government entity, and the government is not a government entity.\n\nThe government is not a government entity, and the government is not a government entity.\n\nThe government is not a government entity.\n\nThe government is not a government entity.\n\nThe government is not a government entity.\n\nThe government is not a government entity.\n\n <end>'
+--------------------------------------------------
+Eval loss at step 56236 is: 4.0561; accuracy: 31.3
+Loss at step 56250: 3.7399
+Loss at step 56500: 4.1192
+The capital city of Korea is:
+'Answer: \n\nThe country is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that is not a country that <end>'
+--------------------------------------------------
+Eval loss at step 56736 is: 4.0649; accuracy: 31.240000000000002
+Loss at step 56750: 3.9107
+Loss at step 57000: 4.1958
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of more than 400,000 residents, and is the capital of the city of Seoul.\n\nThe city is the capital of Seoul, which is the capital of Seoul.\n\nThe city is the capital of Seoul, which is the capital of Seoul.\n\nThe city is the capital of Seoul, which is the capital of Seoul.\n\nThe city is the capital of Seoul, which is the capital of Seoul.\n\nThe city <end>'
+--------------------------------------------------
+Eval loss at step 57236 is: 4.0626; accuracy: 31.2
+Loss at step 57250: 4.1521
+Loss at step 57500: 3.8341
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe capital of the world is the capital of the world.\n\nThe capital of the world is the capital of the world.\n\nThe capital of the world is the capital of the world.\n\nThe capital of the world is the capital of the world.\n\nThe capital of the world is the capital of the world.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 57736 is: 4.0514; accuracy: 31.4
+Loss at step 57750: 4.0833
+Loss at step 58000: 4.1969
+The capital city of Korea is:
+'Answer: \n\n“The country is a country of the people, and the people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people are not the people. The people <end>'
+--------------------------------------------------
+Eval loss at step 58236 is: 4.0628; accuracy: 31.230000000000004
+Loss at step 58250: 4.0268
+Loss at step 58500: 3.9997
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is the capital of Pyongyang, and the capital of Pyongyang is the capital of Pyongyang.\n\nThe capital city of Pyongyang is the capital of Pyongyang, and the capital of Pyongyang is the capital of Pyongyang.\n\nThe capital city of Pyongyang is the capital of Pyongyang, and the capital of Pyongyang is the capital of Pyongyang.\n\nThe capital city of Pyongyang is the capital of Pyongyang, and the capital of Pyongyang is the capital of Pyongyang.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 58736 is: 4.0506; accuracy: 31.4
+Loss at step 58750: 4.0313
+Loss at step 59000: 3.8196
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Korea is the capital city of Korea, and the capital city of Korea is the capital city of Korea.\n\nThe capital city of Korea is the capital city of Korea, and the capital city of Korea is the capital city of Korea.\n\nThe capital city of Korea is the capital city of Korea, and the capital city of Korea is the capital city of Korea.\n\nThe capital city of Korea is the capital city of Korea, and the capital city <end>'
+--------------------------------------------------
+Eval loss at step 59236 is: 4.05; accuracy: 31.47
+Loss at step 59250: 4.0604
+Loss at step 59500: 4.0025
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the <end>'
+--------------------------------------------------
+Eval loss at step 59736 is: 4.0476; accuracy: 31.44
+Loss at step 59750: 4.3127
+Loss at step 60000: 4.1578
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital of the country, and the capital of the country is the capital of the country.\n\nThe capital of the country is the capital of the country, and the capital of the country is the capital of the country.\n\nThe capital of the country is the capital of the country, and the capital of the country is the capital of the country.\n\nThe capital of the country is the capital of the country.\n\nThe capital of <end>'
+--------------------------------------------------
+Eval loss at step 60236 is: 4.0469; accuracy: 31.41
+Loss at step 60250: 3.9833
+Loss at step 60500: 4.1501
+The capital city of Korea is:
+'Answer: \n\nThe Korean peninsula is the largest in the world, and the largest in the world, and the largest in the world, and the largest in the world.\n\nThe country’s largest and most powerful, the largest in the world, is the largest in the world, and the largest in the world, and the largest in the world.\n\nThe country’s largest and most powerful, the largest in the world, is the largest in the world, and the largest in <end>'
+--------------------------------------------------
+Eval loss at step 60736 is: 4.0312; accuracy: 31.64
+Loss at step 60750: 3.9224
+Loss at step 61000: 4.0201
+The capital city of Korea is:
+'Answer: \n\nThe capital city of the world is the capital of the world.\n\nThe capital city of the world is the capital of the world.\n\nThe capital city of the world is the capital of the world.\n\nThe capital city of the world is the capital of the world.\n\nThe capital city of the world is the capital of the world.\n\nThe capital city of the world is the capital of the world.\n\nThe capital city of the world is <end>'
+--------------------------------------------------
+Eval loss at step 61236 is: 4.0478; accuracy: 31.419999999999998
+Loss at step 61250: 4.3393
+Loss at step 61500: 4.2416
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 61736 is: 4.0437; accuracy: 31.369999999999997
+Loss at step 61750: 4.0869
+Loss at step 62000: 4.237
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city that is not a city that is not a city that is not a city. It is a city that is not a city that is not a city that is not a city that is not a city.\n\nThe city is a city that is not a city that is not a city that is not a city that is not a city that is not a city that is not a city that is not a city that is not a city that is <end>'
+--------------------------------------------------
+Eval loss at step 62236 is: 4.0341; accuracy: 31.540000000000003
+Loss at step 62250: 3.9149
+Loss at step 62500: 4.1413
+The capital city of Korea is:
+'Answer: \n\nThe city of the city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of the country.\n\nThe city is the capital of <end>'
+--------------------------------------------------
+Eval loss at step 62736 is: 4.0276; accuracy: 31.630000000000003
+Loss at step 62750: 3.9917
+Loss at step 63000: 4.1137
+The capital city of Korea is:
+'Answer: \n\nThe Korean peninsula is the most populated region of the world, and the region is the most populated region of the world.\n\nThe region is the most populated region of the world, and the region is the most populated region of the world.\n\nThe region is the most populated region of the world, and the region is the most populated region of the world.\n\nThe region is the most populated region of the world, and the region is the most populated region of the <end>'
+--------------------------------------------------
+Eval loss at step 63236 is: 4.035; accuracy: 31.5
+Loss at step 63250: 3.8595
+Loss at step 63500: 4.1174
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 63736 is: 4.0314; accuracy: 31.580000000000002
+Loss at step 63750: 4.1555
+Loss at step 64000: 3.8812
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people <end>'
+--------------------------------------------------
+Eval loss at step 64236 is: 4.025; accuracy: 31.680000000000003
+Loss at step 64250: 3.9264
+Loss at step 64500: 4.056
+The capital city of Korea is:
+'Answer: \n\nThe city is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city that is a city <end>'
+--------------------------------------------------
+Eval loss at step 64736 is: 4.0365; accuracy: 31.47
+Loss at step 64750: 3.9412
+Loss at step 65000: 4.0771
+The capital city of Korea is:
+'Answer: \n\nThe city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the <end>'
+--------------------------------------------------
+Eval loss at step 65236 is: 4.0319; accuracy: 31.59
+Loss at step 65250: 4.1096
+Loss at step 65500: 4.0628
+The capital city of Korea is:
+'Answer: \n\nThe United States is a nation of nations, and the United States is a nation of nations. The United States is a nation of nations, and the United States is a nation of nations. The United States is a nation of nations, and the United States is a nation of nations. The United States is a nation of nations, and the United States is a nation of nations. The United States is a nation of nations, and the United States is a nation of nations. The United <end>'
+--------------------------------------------------
+Eval loss at step 65736 is: 4.028; accuracy: 31.61
+Loss at step 65750: 3.9913
+Loss at step 66000: 4.0814
+The capital city of Korea is:
+'Answer: \n\nThe United States is a country that has a lot of problems with its own economic system. The United States is a country that has a lot of problems with its own economic system. The United States is a country that has a lot of problems with its own economic system. The United States is a country that has a lot of problems with its own economic system. The United States is a country that has a lot of problems with its own economic system. The United States is a country that <end>'
+--------------------------------------------------
+Eval loss at step 66236 is: 4.0256; accuracy: 31.66
+Loss at step 66250: 3.9197
+Loss at step 66500: 4.0745
+The capital city of Korea is:
+"Answer: \n\nThe country's capital city, the capital city of Yunnan, is the capital city of Yunnan, and the capital city of Yunnan is the capital city of Yunnan.\n\nThe capital city of Yunnan is the capital city of Yunnan, and is the capital city of Yunnan.\n\nThe capital city of Yunnan is the capital city of Yunnan, and is the capital city of Yunnan.\n <end>"
+--------------------------------------------------
+Eval loss at step 66736 is: 4.0259; accuracy: 31.56
+Loss at step 66750: 3.867
+Loss at step 67000: 3.9964
+The capital city of Korea is:
+'Answer: \n\nThe city of Yokohama, Japan, is a city of Yokohama, Japan.\n\nThe city of Yokohama, Japan, is a city of Yokohama, Japan.\n\nThe city of Yokohama, Japan, is a city of Yokohama, Japan.\n\nThe city of Yokohama is a city of Yokohama, Japan.\n\nThe city of Yokohama is <end>'
+--------------------------------------------------
+Eval loss at step 67236 is: 4.0264; accuracy: 31.64
+Loss at step 67250: 4.1015
+Loss at step 67500: 4.065
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of the city of Seoul, which is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul.\n\nThe city of Seoul is a city of the city of Seoul <end>'
+--------------------------------------------------
+Eval loss at step 67736 is: 4.0171; accuracy: 31.759999999999998
+Loss at step 67750: 3.9002
+Loss at step 68000: 4.2491
+The capital city of Korea is:
+'Answer: \n\nThe city of Yong-i, a city of about 1,000 people, is located in the city of Yong-i, a city of about 1,000 people.\n\nThe city of Yong-i is located in Yong-i, a city of about 1,000 people.\n\nThe city of Yong-i is located in Yong-i, a city of about 1,000 people.\n\nThe city is located in Y <end>'
+--------------------------------------------------
+Eval loss at step 68236 is: 4.0182; accuracy: 31.69
+Loss at step 68250: 4.0307
+Loss at step 68500: 4.0701
+The capital city of Korea is:
+'Answer: \n\nThe city of Tokyo is a city of the world, and it is a city of the world. It is a city of the world, and it is a city of the world. It is a city of the world, and it is a city of the world. It is a city of the world. It is a city of the world. It is a city of the world. It is a city of the world. It is a city of the world. It is a <end>'
+--------------------------------------------------
+Eval loss at step 68736 is: 4.0198; accuracy: 31.64
+Loss at step 68750: 3.9453
+Loss at step 69000: 4.0605
+The capital city of Korea is:
+'Answer: \n\nThe city of Kyung-soo, Japan, is a city of Kyung-soo, Japan, and is a city of Kyung-soo. It is a city of Kyung-soo, Japan, and is a city of Kyung-soo. It is a city of Kyung-soo, Japan, and is a city of Kyung-soo. It is a city of Kyung-soo, Japan, and is <end>'
+--------------------------------------------------
+Eval loss at step 69236 is: 4.0137; accuracy: 31.7
+Loss at step 69250: 4.14
+Loss at step 69500: 4.1314
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul.\n\nThe capital <end>'
+--------------------------------------------------
+Eval loss at step 69736 is: 4.0181; accuracy: 31.64
+Loss at step 69750: 3.9634
+Loss at step 70000: 4.0698
+The capital city of Korea is:
+'Answer: \n\nThe capital city of the capital city of Yokohama, a city of about 1,000 people, is a city of about 1,000 people.\n\nThe capital city of Yokohama is a city of about 1,000 people, and is located in Yokohama, a city of about 1,000 people.\n\nThe capital city of Yokohama is located in Yokohama, a city of about 1,000 people. <end>'
+--------------------------------------------------
+Eval loss at step 70236 is: 4.0119; accuracy: 31.790000000000003
+Loss at step 70250: 3.8817
+Loss at step 70500: 4.0109
+The capital city of Korea is:
+'Answer: \n\nThe city of Dusseh, which is the capital of the city of Dusseh, is the capital of the city of Dusseh.\n\nThe city of Dusseh is the capital of Dusseh.\n\nThe city of Dusseh is the capital of Dusseh.\n\nThe city of Dusseh is the capital of Dusseh.\n\nThe city of Dusseh is <end>'
+--------------------------------------------------
+Eval loss at step 70736 is: 4.0098; accuracy: 31.759999999999998
+Loss at step 70750: 3.9907
+Loss at step 71000: 4.027
+The capital city of Korea is:
+'Answer: \n\nThe capital city of the city of Yonkers, the capital city of Yonkers, is the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Yonkers, the capital city of Y <end>'
+--------------------------------------------------
+Eval loss at step 71236 is: 4.0165; accuracy: 31.69
+Loss at step 71250: 4.0821
+Loss at step 71500: 3.7754
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city of Seoul is the capital city of Seoul.\n\nThe capital city of Seoul is the capital city of Seoul, and the capital city <end>'
+--------------------------------------------------
+Eval loss at step 71736 is: 4.0079; accuracy: 31.75
+Loss at step 71750: 3.9201
+Loss at step 72000: 4.2194
+The capital city of Korea is:
+'Answer: \n\nThe country is a country that has been fighting for decades to keep its nuclear weapons program.\n\nThe country is a country that has been fighting for decades to keep its nuclear weapons program.\n\nThe country is a country that has been fighting for decades to keep its nuclear weapons program.\n\nThe country is a country that has been fighting for decades to keep its nuclear weapons program.\n\nThe country is a country that has been fighting for decades to keep its nuclear weapons program <end>'
+--------------------------------------------------
+Eval loss at step 72236 is: 4.0108; accuracy: 31.78
+Loss at step 72250: 4.0304
+Loss at step 72500: 3.8596
+The capital city of Korea is:
+'Answer: \n\n“The country is a country that has been in a state of war for decades. The country has been in a state of war for decades. The country has been in a state of war for decades. The country has been in a state of war for decades. The country has been in a state of war for decades. The country has been in a state of war for decades. The country has been in a state of war for decades. The country has been in a state of <end>'
+--------------------------------------------------
+Eval loss at step 72736 is: 3.9968; accuracy: 31.840000000000003
+Loss at step 72750: 4.0114
+Loss at step 73000: 3.9444
+The capital city of Korea is:
+'Answer: \n\n“The country is a country that has a lot of people in it, and it’s a country that has a lot of people in it. It’s a country that has a lot of people in it. It’s a country that has a lot of people in it. It’s a country that has a lot of people in it. It’s a country that has a lot of people in it. It’s a country that has a lot of people <end>'
+--------------------------------------------------
+Eval loss at step 73236 is: 4.0077; accuracy: 31.8
+Loss at step 73250: 4.198
+Loss at step 73500: 4.0601
+The capital city of Korea is:
+'Answer: \n\n“The city of Seoul is a major city in the south, and it is a major city in the south. It is a major city in the south, and it is a major city in the south. It is a major city in the south, and it is a major city in the south. It is a major city in the south, and it is a major city in the south. It is a major city in the south, and it is a major city in the <end>'
+--------------------------------------------------
+Eval loss at step 73736 is: 4.0072; accuracy: 31.8
+Loss at step 73750: 3.9406
+Loss at step 74000: 3.9359
+The capital city of Korea is:
+'Answer: \n\n“The city of Seoul is the capital of the city of Seoul, and the city of Seoul is the capital of the city of Seoul. The city of Seoul is the capital of the city of Seoul, and the city of Seoul is the capital of the city of Seoul. The city of Seoul is the capital of the city of Seoul. The city of Seoul is the capital of the city of Seoul. The city of Seoul is the capital of the city of Seoul. The city of <end>'
+--------------------------------------------------
+Eval loss at step 74236 is: 4.0045; accuracy: 31.819999999999997
+Loss at step 74250: 3.9585
+Loss at step 74500: 4.0838
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the most important city in the world, and it is the most important city in the world.\n\nThe city of Pyongyang is the most important city in the world.\n\nThe city of Pyongyang is the most important city in the world.\n\nThe city of Pyongyang is the most important city in the world.\n\nThe city of Pyongyang is the most important city in the world.\n\nThe city of Pyongyang is the most important city in the <end>'
+--------------------------------------------------
+Eval loss at step 74736 is: 3.9983; accuracy: 31.819999999999997
+Loss at step 74750: 4.0665
+Loss at step 75000: 3.8663
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is a place for people to live in.\n\nThe city of Pyongyang is a place for people to live in.\n\nThe city of Pyongyang is a place for people to live in.\n\nThe city of Pyongyang is a place for people to live in.\n\nThe city of Pyongyang is a place for people to live in.\n\nThe city of Pyongyang is a place for people to live in.\n\nThe city of Pyongyang is a place <end>'
+--------------------------------------------------
+Eval loss at step 75236 is: 4.0041; accuracy: 31.8
+Loss at step 75250: 3.9618
+Loss at step 75500: 4.0547
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of the city, and the city is a city of the city. It is a city of the city, and it is a city of the city. It is a city of the city, and it is a city of the city. It is a city of the city, and it is a city of the city. It is a city of the city, and it is a city of the city. It is a city of the city, <end>'
+--------------------------------------------------
+Eval loss at step 75736 is: 3.9886; accuracy: 32.019999999999996
+Loss at step 75750: 3.9723
+Loss at step 76000: 3.7812
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is the capital city of Pyongyang, which is the capital city of Pyongyang. It is the capital city of Pyongyang, which is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city of Pyongyang. It is the capital city <end>'
+--------------------------------------------------
+Eval loss at step 76236 is: 3.9989; accuracy: 31.879999999999995
+Loss at step 76250: 3.9287
+Loss at step 76500: 3.9572
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 100,000 people, and it is a city of about 100,000 people. It is a city of about 100,000 people. It is a city of about 100,000 people. It is a city of about 100,000 people. It is a city of about 100,000 people. It is a city of about 100,000 people. It is a city of about 100,000 people. It is a city of <end>'
+--------------------------------------------------
+Eval loss at step 76736 is: 3.9871; accuracy: 32.09
+Loss at step 76750: 3.98
+Loss at step 77000: 4.0323
+The capital city of Korea is:
+'Answer: \n\n“The city is a city of about 100,000 people, and it’s a city of about 100,000 people. It’s a city of about 100,000 people. It’s a city of about 100,000 people. It’s a city of about 100,000 people. It’s a city of about 100,000 people. It’s a city of about 100,000 people. It’s a city of about 100,000 people <end>'
+--------------------------------------------------
+Eval loss at step 77236 is: 3.9931; accuracy: 31.94
+Loss at step 77250: 3.8262
+Loss at step 77500: 4.0743
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital city of Seoul, which is the capital city of Seoul.\n\nThe city is also the capital city of Seoul, which is the capital city of Seoul.\n\nThe city is also the capital city of Seoul, which is the capital city of Seoul.\n\nThe city is also the capital city of Seoul, which is the capital city of Seoul.\n\nThe city is also the capital city of Seoul, which is the capital city of <end>'
+--------------------------------------------------
+Eval loss at step 77736 is: 3.9802; accuracy: 31.96
+Loss at step 77750: 3.8959
+Loss at step 78000: 3.8615
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of about 1,000 people is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of about 1,000 people is <end>'
+--------------------------------------------------
+Eval loss at step 78236 is: 3.9943; accuracy: 31.91
+Loss at step 78250: 3.9822
+Loss at step 78500: 4.1348
+The capital city of Korea is:
+'Answer: \n\n“The Korean Peninsula is a great place for people to live in, and the country is a great place for people to live in.”\n\nThe Korean peninsula is a great place for people to live in, and the country is a great place for people to live in.\n\nThe Korean peninsula is a great place for people to live in, and the country is a great place for people to live in.\n\nThe Korean peninsula is a great place for people to live in <end>'
+--------------------------------------------------
+Eval loss at step 78736 is: 3.9957; accuracy: 31.919999999999998
+Loss at step 78750: 3.9686
+Loss at step 79000: 4.1421
+The capital city of Korea is:
+'Answer: \n\n“The capital city of Korea is the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, the capital city of Korea, <end>'
+--------------------------------------------------
+Eval loss at step 79236 is: 3.9872; accuracy: 31.95
+Loss at step 79250: 3.8384
+Loss at step 79500: 4.041
+The capital city of Korea is:
+'Answer: \n\n“The capital city of Pyongyang is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital city of Pyongyang, which is the capital <end>'
+--------------------------------------------------
+Eval loss at step 79736 is: 3.9858; accuracy: 32.0
+Loss at step 79750: 4.0318
+Loss at step 80000: 3.9032
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the largest city in the world.\n\nThe city of Pyongyang is the largest city in the world.\n\nThe city of Pyongyang is the largest city in the world.\n\nThe city of Pyongyang is the largest city in the world.\n\nThe city of Pyongyang is the largest city in the world.\n\nThe city of Pyongyang is the largest city in the world.\n\nThe city of Pyongyang is the largest city in the world.\n <end>'
+--------------------------------------------------
+Eval loss at step 80236 is: 3.9841; accuracy: 32.0
+Loss at step 80250: 3.9501
+Loss at step 80500: 3.9649
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is the capital of the world’s largest city, and its capital is the capital of the world’s largest city.\n\nThe capital city of Seoul is the capital of the world’s largest city, and its capital is the capital of the world’s largest city.\n\nThe capital city of Seoul is the capital of the world’s largest city, and its capital is the capital of the world’s largest city.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 80736 is: 3.9673; accuracy: 32.129999999999995
+Loss at step 80750: 4.2995
+Loss at step 81000: 4.0283
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the most powerful city in North Korea. The city of Pyongyang is the <end>'
+--------------------------------------------------
+Eval loss at step 81236 is: 3.9837; accuracy: 32.0
+Loss at step 81250: 3.9785
+Loss at step 81500: 3.9745
+The capital city of Korea is:
+'Answer: \n\nThe city of Yonhapur is the capital of the city of Yonhapur.\n\nThe city of Yonhapur is the capital of Yonhapur.\n\nThe city of Yonhapur is the capital of Yonhapur.\n\nYonhapur is the capital of Yonhapur.\n\nYonhapur is the capital of Yonhapur.\n\n <end>'
+--------------------------------------------------
+Eval loss at step 81736 is: 3.9879; accuracy: 32.04
+Loss at step 81750: 3.9555
+Loss at step 82000: 4.0744
+The capital city of Korea is:
+'Answer: \n\n“The North Korean peninsula is the largest in the world, with a population of about 2 million people. The North Korean peninsula is the largest in the world, with a population of about 2 million people. The North Korean peninsula is the largest in the world, with a population of about 2 million people. The North Korean peninsula is the largest in the world, with a population of about 2 million people. The North Korean peninsula is the largest in the world, with a population of about <end>'
+--------------------------------------------------
+Eval loss at step 82236 is: 3.9732; accuracy: 32.18
+Loss at step 82250: 4.07
+Loss at step 82500: 4.1643
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the largest city in North Korea, with a population of about 1,000 people.\n\nThe city of Pyongyang is the largest city in North Korea, with a population of about 1,000 people.\n\nThe city of Pyongyang is the largest city in North Korea, with a population of about 1,000 people.\n\nThe city of Pyongyang is the largest city in North Korea, with a population of about 1,000 people.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 82736 is: 3.968; accuracy: 32.22
+Loss at step 82750: 4.0316
+Loss at step 83000: 3.8492
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is: <end>'
+--------------------------------------------------
+Eval loss at step 83236 is: 3.9836; accuracy: 32.07
+Loss at step 83250: 3.987
+Loss at step 83500: 3.876
+The capital city of Korea is:
+'Answer: \n\n“The capital city of Pyongyang is a city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of <end>'
+--------------------------------------------------
+Eval loss at step 83736 is: 3.9836; accuracy: 32.019999999999996
+Loss at step 83750: 4.0055
+Loss at step 84000: 3.9615
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is a city of the same name, and it is a city of the same name.\n\nThe city of Pyongyang is a city of the same name, and it is a city of the same name.\n\nThe city of Pyongyang is a city of the same name, and it is a city of the same name.\n\nThe city of Pyongyang is a city of the same name, and it is a city of the same name.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 84236 is: 3.9722; accuracy: 32.2
+Loss at step 84250: 4.0561
+Loss at step 84500: 4.0586
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang.\n <end>'
+--------------------------------------------------
+Eval loss at step 84736 is: 3.9568; accuracy: 32.37
+Loss at step 84750: 3.8261
+Loss at step 85000: 3.9153
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 1,000 people, and its capital city is about 1,000 people. It is a city of about 1,000 people. It is a city of about 1,000 people. It is a city of about 1,000 people. It is a city of about 1,000 people. It is a city of about 1,000 people. It is a city of about 1,000 people. It is a city of about <end>'
+--------------------------------------------------
+Eval loss at step 85236 is: 3.969; accuracy: 32.29
+Loss at step 85250: 4.0002
+Loss at step 85500: 3.9851
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the capital city of Pyongyang, and the capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang, and the capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang, and the capital city of Pyongyang is the capital city of Pyongyang.\n\nThe capital city of Pyongyang is the capital city of Pyongyang, and the capital city of <end>'
+--------------------------------------------------
+Eval loss at step 85736 is: 3.9738; accuracy: 32.129999999999995
+Loss at step 85750: 4.0448
+Loss at step 86000: 3.8952
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the capital of the world.\n\nThe city of Pyongyang is the <end>'
+--------------------------------------------------
+Eval loss at step 86236 is: 3.9638; accuracy: 32.24
+Loss at step 86250: 3.8895
+Loss at step 86500: 3.9968
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest city in the world. It is the largest <end>'
+--------------------------------------------------
+Eval loss at step 86736 is: 3.9699; accuracy: 32.23
+Loss at step 86750: 3.8966
+Loss at step 87000: 4.1476
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is: <end>'
+--------------------------------------------------
+Eval loss at step 87236 is: 3.974; accuracy: 32.11
+Loss at step 87250: 4.1756
+Loss at step 87500: 3.843
+The capital city of Korea is:
+'Answer: \n\nThe capital city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of <end>'
+--------------------------------------------------
+Eval loss at step 87736 is: 3.9657; accuracy: 32.22
+Loss at step 87750: 3.8707
+Loss at step 88000: 3.9272
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is:\n\nThe capital city of Korea is: <end>'
+--------------------------------------------------
+Eval loss at step 88236 is: 3.9577; accuracy: 32.49
+Loss at step 88250: 3.9089
+Loss at step 88500: 3.8445
+The capital city of Korea is:
+'Answer: \n\nThe capital of the city is a small town, and the capital is a small town.\n\nThe capital is a small town, and the capital is a small town.\n\nThe capital is a small town, and the capital is a small town.\n\nThe capital is a small town, and the capital is a small town.\n\nThe capital is a small town, and the capital is a small town.\n\nThe capital is a small town, and the <end>'
+--------------------------------------------------
+Eval loss at step 88736 is: 3.9611; accuracy: 32.22
+Loss at step 88750: 3.7851
+Loss at step 89000: 4.013
+The capital city of Korea is:
+'Answer: \n\n“The capital city of Korea is a state of affairs, and the state of the state of Korea is a state of affairs. It is a state of affairs, and it is a state of affairs. It is a state of affairs, and it is a state of affairs. It is a state of affairs, and it is a state of affairs. It is a state of affairs, and it is a state of affairs. It is a state of affairs, and it is a <end>'
+--------------------------------------------------
+Eval loss at step 89236 is: 3.9528; accuracy: 32.41
+Loss at step 89250: 4.0035
+Loss at step 89500: 3.7266
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is a small town, and the capital city of Pyongyang is a small town.\n\nThe capital city of Pyongyang is a small town, and the capital city of Pyongyang is a small town.\n\nThe capital city of Pyongyang is a small town, and the capital city of Pyongyang is a small town.\n\nThe capital city of Pyongyang is a small town, and the capital city of Pyongyang is a small town.\n\nThe capital city of Pyongyang <end>'
+--------------------------------------------------
+Eval loss at step 89736 is: 3.9578; accuracy: 32.269999999999996
+Loss at step 89750: 4.005
+Loss at step 90000: 4.1032
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is:\n\nThe capital city of Seoul is: <end>'
+--------------------------------------------------
+Eval loss at step 90236 is: 3.9561; accuracy: 32.36
+Loss at step 90250: 3.9917
+Loss at step 90500: 4.0422
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 90736 is: 3.9546; accuracy: 32.379999999999995
+Loss at step 90750: 3.9756
+Loss at step 91000: 3.8547
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the capital of the world.\n\nThe city of Seoul is the <end>'
+--------------------------------------------------
+Eval loss at step 91236 is: 3.9558; accuracy: 32.39
+Loss at step 91250: 3.9718
+Loss at step 91500: 4.121
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of the same name.\n\nThe city of Seoul is a city of the same name.\n\nThe city of Seoul is a city of the same name.\n\nThe city of Seoul is a city of the same name.\n\nThe city of Seoul is a city of the same name.\n\nThe city of Seoul is a city of the same name.\n\nThe city of Seoul is a city of the same name.\n <end>'
+--------------------------------------------------
+Eval loss at step 91736 is: 3.9494; accuracy: 32.46
+Loss at step 91750: 4.0864
+Loss at step 92000: 4.0167
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people, and it is a city of about 1,000 people.\n\nThe city of Seoul is a city of about 1,000 people <end>'
+--------------------------------------------------
+Eval loss at step 92236 is: 3.9582; accuracy: 32.269999999999996
+Loss at step 92250: 3.9429
+Loss at step 92500: 4.0842
+The capital city of Korea is:
+'Answer: \n\nThe country’s first nuclear power plant, the North Korean Nuclear Power Plant, is expected to be built in the first half of the year.\n\nThe country’s first nuclear power plant, the North Korean Nuclear Power Plant, is expected to be built in the first half of the year.\n\nThe North Koreans are expected to be built in the second half of the year, but the country’s first nuclear power plant is expected to be built in the second half of <end>'
+--------------------------------------------------
+Eval loss at step 92736 is: 3.9524; accuracy: 32.33
+Loss at step 92750: 4.0168
+Loss at step 93000: 3.8669
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is a city of about 1,000 people.\n\nThe city of Pyongyang is a city of about 1,000 people.\n\nThe city of Pyongyang is a city of about 1,000 people.\n\nThe city of Pyongyang is a city of about 1,000 people.\n\nThe city of Pyongyang is a city of about 1,000 people.\n\nThe city of Pyongyang is a city of about 1,000 people.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 93236 is: 3.9454; accuracy: 32.440000000000005
+Loss at step 93250: 3.8802
+Loss at step 93500: 4.0752
+The capital city of Korea is:
+'Answer: \n\n"The capital city of Seoul is a very large capital city, and the capital city of Seoul is a very large capital city. The capital city of Seoul is a very large capital city, and the capital city of Seoul is a very large capital city. The capital city of Seoul is a very large capital city, and the capital city of Seoul is a very large capital city. The capital city of Seoul is a very large capital city, and the capital city of Seoul is a very <end>'
+--------------------------------------------------
+Eval loss at step 93736 is: 3.9499; accuracy: 32.300000000000004
+Loss at step 93750: 4.0112
+Loss at step 94000: 3.8152
+The capital city of Korea is:
+'Answer:  the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, Pyongyang, and the capital, <end>'
+--------------------------------------------------
+Eval loss at step 94236 is: 3.951; accuracy: 32.36
+Loss at step 94250: 3.7543
+Loss at step 94500: 4.0043
+The capital city of Korea is:
+'Answer:  a small island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island <end>'
+--------------------------------------------------
+Eval loss at step 94736 is: 3.9485; accuracy: 32.42
+Loss at step 94750: 3.9413
+Loss at step 95000: 4.0478
+The capital city of Korea is:
+'Answer:  the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city of Seoul, the capital city <end>'
+--------------------------------------------------
+Eval loss at step 95236 is: 3.9492; accuracy: 32.379999999999995
+Loss at step 95250: 4.0603
+Loss at step 95500: 3.962
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is a vast, sprawling, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, and vast, vast, vast, and vast, vast <end>'
+--------------------------------------------------
+Eval loss at step 95736 is: 3.9511; accuracy: 32.39
+Loss at step 95750: 4.0332
+Loss at step 96000: 3.7981
+The capital city of Korea is:
+'Answer:  a city of the world’s second largest city, a city of the world’s second largest city, and a city of the world’s second largest city.\n\nThe city is home to the world’s first major cities, and is home to the world’s second largest city. The city is home to the world’s second largest city, and is home to the world’s second largest city.\n\nThe city is home to the world’s second largest <end>'
+--------------------------------------------------
+Eval loss at step 96236 is: 3.9354; accuracy: 32.56
+Loss at step 96250: 4.0468
+Loss at step 96500: 3.8686
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is:\n\nNorth Korea is: <end>'
+--------------------------------------------------
+Eval loss at step 96736 is: 3.9433; accuracy: 32.519999999999996
+Loss at step 96750: 4.0714
+Loss at step 97000: 3.8339
+The capital city of Korea is:
+'Answer:  the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city of the United States, the capital city <end>'
+--------------------------------------------------
+Eval loss at step 97236 is: 3.9346; accuracy: 32.6
+Loss at step 97250: 3.8482
+Loss at step 97500: 3.9148
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a city of the same type as the city of Seoul.\n\nThe city of Seoul is a city of the same type as the city of Seoul.\n\nThe city of Seoul is a city of the same type as the city of the same type as the city of the same type as the city of the same type as the city of the same type as the city of the same type as the city of the same type as the city of the same <end>'
+--------------------------------------------------
+Eval loss at step 97736 is: 3.9399; accuracy: 32.54
+Loss at step 97750: 3.8875
+Loss at step 98000: 3.9206
+The capital city of Korea is:
+'Answer: \n\nThe city of Pyongyang is a major hub of the economic development of the city.\n\nThe city is a major hub of economic development, and is a major hub of economic development.\n\nThe city is a major hub of economic development, and is a major hub of economic development.\n\nThe city is a major hub of economic development, and is a major hub of economic development.\n\nThe city is a major hub of economic development, and is a major hub of <end>'
+--------------------------------------------------
+Eval loss at step 98236 is: 3.9392; accuracy: 32.519999999999996
+Loss at step 98250: 3.8326
+Loss at step 98500: 3.9563
+The capital city of Korea is:
+'Answer: \n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe city of Seoul is a state of war.\n\nThe <end>'
+--------------------------------------------------
+Eval loss at step 98736 is: 3.9366; accuracy: 32.57
+Loss at step 98750: 3.9813
+Loss at step 99000: 3.889
+The capital city of Korea is:
+'Answer: \n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is:\n\nThe capital city of Pyongyang is: <end>'
+--------------------------------------------------
+Eval loss at step 99236 is: 3.9364; accuracy: 32.51
+Loss at step 99250: 3.9695
+Loss at step 99500: 4.0263
+The capital city of Korea is:
+'Answer: \n\nThe city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the <end>'
+--------------------------------------------------
+Eval loss at step 99736 is: 3.9353; accuracy: 32.519999999999996
+Loss at step 99750: 4.1887

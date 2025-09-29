@@ -120,7 +120,7 @@ betas = (0.9, 0.99)
 T_max = 3
 
 special_tokens = ["<|endoftext|>"]
-train_data_path = "./cs336_basics/data/owt_valid.txt"
+train_data_path = "./cs336_basics/data/owt_train.txt"
 valid_data_path = "./cs336_basics/data/owt_valid.txt"
 
 tokenizer_path = "./cs336_basics/data/owt_tokenizer"
@@ -179,11 +179,14 @@ criterion = nn.CrossEntropyLoss()
 total_loss = 0
 print("Training time !!!")
 torch.autograd.set_detect_anomaly(True)
-for step in tqdm(range(steps)) :
+for step in range(steps) :
     inputs, labels = dataset.sample("train", batch_size= batch_size)
 
     inputs = inputs.to("cuda")
     labels = labels.to("cuda")
+    # samples = inputs[0].tolist()
+    # print(tokenizer.decode(samples))
+    
     logits = model(inputs)
     logits = logits.view(-1, logits.shape[-1])
     labels = labels.view(-1)
@@ -194,15 +197,16 @@ for step in tqdm(range(steps)) :
     optimizer.zero_grad()
     scheduler.step()
     total_loss += loss.item()
-    if step % 300 == 0 and step < 10000:
+    if step % 250 == 0 :
         loss = int(loss * 10000) / 10000
         print(f"Loss at step {step}: {loss}")
 
     if step % 500 == 236 :
-        prompt = "The capital city of Vietnam is:"
-        test_ans = decoding(model, tokenizer, prompt, temperature= 1)
+        prompt = "The capital city of Korea is:"
+        test_ans = decoding(model, tokenizer, prompt, temperature= 1, max_token_generated= 100)
         print(prompt)
-        print(f"Answer: {test_ans} <end>")
+        answer = f"Answer: {test_ans} <end>"
+        print(repr(answer))
         print("-"*50)
         eval_loss, eval_acc = eval(model, optimizer, scheduler, dataset, batch_size= 2* batch_size)
         eval_loss = int(eval_loss * 10000)/10000
