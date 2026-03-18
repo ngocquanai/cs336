@@ -6,7 +6,7 @@ def find_chunk_boundaries(
     file: BinaryIO,
     desired_num_chunks: int,
     split_special_token: bytes,
-) -> list[int]:
+) -> list[int]:  # pyright: ignore[reportIndexIssue]
     """
     Chunk the file into parts that can be counted independently.
     May return fewer chunks if the boundaries end up overlapping.
