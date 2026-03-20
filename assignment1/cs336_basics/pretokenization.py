@@ -72,7 +72,7 @@ def process_chunk(args) :
 
 
 
-def pretokenization(filepath, PAT, special_tokens, num_processes = None) :
+def pretokenization(filepath, PAT, special_tokens, num_processes = 64) :
     
     with open(filepath, "rb") as file:
         boundaries = find_chunk_boundaries(file, num_processes, special_tokens[0].encode('utf-8'))
@@ -95,14 +95,6 @@ def pretokenization(filepath, PAT, special_tokens, num_processes = None) :
     }
     return freq_dict_table
 
-
-# filepath = "../data/TinyStoriesV2-GPT4-valid.txt"
-# PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
-# special_tokens = ["<|endoftext|>"]
-# ## Usage
-# freq_table = pretokenization(filepath, PAT, special_tokens, num_processes= 256)
-
-# print(freq_table)
 
         
 

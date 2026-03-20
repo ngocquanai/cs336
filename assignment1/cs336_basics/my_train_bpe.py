@@ -37,7 +37,7 @@ def adjacent_pair(freq_table: dict) :
             pairs_count[pair] = pairs_count.get(pair, 0) + count
     return pairs_count
 
-# @profile
+@profile
 def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: list[str], num_processes= 1) :
 
     PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
@@ -73,7 +73,7 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
                 if pair == selected_pair:
                     byte_tuple, prefix, suffix = _merge_bytes(byte_tuple, i)
 
-                    # Update pairs_count
+                    # Update the pair frequency table
                     if prefix:
                         add_pair = (prefix[-1], vocab[new_vocab_idx])
                         pairs_count[add_pair] = pairs_count.get(add_pair, 0) + count
@@ -86,19 +86,25 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
                         pairs_count[del_pair] -= count
                     pairs_count[selected_pair] -= count
                 i+=1
-            # Update frequency table
+            # Update the pre-token frequency table
             new_freq_table[byte_tuple] = count
         freq_table = new_freq_table
+                
 
+
+            
+    
+    # print(len(vocab))
+    # print("*"*300)
     return vocab, merges
 
 
 
-# input_path = "../data/TinyStoriesV2-GPT4-valid.txt"
-# vocab_size = 555
-# special_tokens = ["<|endoftext|>"]
+input_path = "../data/TinyStoriesV2-GPT4-valid.txt"
+vocab_size = 555
+special_tokens = ["<|endoftext|>"]
 
-# vocab, merges = train_bpe(input_path, vocab_size, special_tokens)
+vocab, merges = train_bpe(input_path, vocab_size, special_tokens)
 
 # print(vocab)
 
