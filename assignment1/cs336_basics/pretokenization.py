@@ -1,12 +1,15 @@
 import os
 from typing import BinaryIO
+import regex as re
+from collections import Counter
+from multiprocessing import Pool
 
 
 def find_chunk_boundaries(
     file: BinaryIO,
     desired_num_chunks: int,
     split_special_token: bytes,
-) -> list[int]:  # pyright: ignore[reportIndexIssue]
+) -> list[int]:
     """
     Chunk the file into parts that can be counted independently.
     May return fewer chunks if the boundaries end up overlapping.
@@ -49,14 +52,58 @@ def find_chunk_boundaries(
     return sorted(set(chunk_boundaries))
 
 
-## Usage
-with open(..., "rb") as f:
-    num_processes = 4
-    boundaries = find_chunk_boundaries(f, num_processes, b"<|endoftext|>")
+def process_chunk(args) :
+    filepath, start, end, special_tokens, PAT = args
+    freq_table = Counter()
 
-    # The following is a serial implementation, but you can parallelize this
-    # by sending each start/end pair to a set of processes.
-    for start, end in zip(boundaries[:-1], boundaries[1:]):
-        f.seek(start)
-        chunk = f.read(end - start).decode("utf-8", errors="ignore")
-        # Run pre-tokenization on your chunk and store the counts for each pre-token
+    with open(filepath, "rb") as file :
+        file.seek(start)
+        text = file.read(end - start).decode('utf-8')
+
+    for token in special_tokens :
+        text = text.replace(token, "")
+
+    freq_table = Counter(re.findall(PAT, text))
+    
+    return freq_table
+
+
+
+
+
+
+def pretokenization(filepath, PAT, special_tokens, num_processes = None) :
+    
+    with open(filepath, "rb") as file:
+        boundaries = find_chunk_boundaries(file, num_processes, special_tokens[0].encode('utf-8'))
+
+
+    chunk_args = [
+        (filepath, start, end, special_tokens, PAT) for start, end in zip(boundaries[:-1], boundaries[1:])
+    ]
+    with Pool(processes = num_processes) as pool :
+        chunk_counters = pool.map(process_chunk, chunk_args)
+
+    # freq_table = sum(chunk_counters, Counter())
+    freq_table = Counter()
+    for counter in chunk_counters :
+        freq_table.update(counter)
+
+    freq_dict_table = {
+        tuple(bytes([b]) for b in word.encode('utf-8')) : count
+        for word, count in freq_table.items()
+    }
+    return freq_dict_table
+
+
+# filepath = "../data/TinyStoriesV2-GPT4-valid.txt"
+# PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+# special_tokens = ["<|endoftext|>"]
+# ## Usage
+# freq_table = pretokenization(filepath, PAT, special_tokens, num_processes= 256)
+
+# print(freq_table)
+
+        
+
+
