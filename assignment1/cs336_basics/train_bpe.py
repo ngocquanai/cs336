@@ -1,5 +1,8 @@
 from cs336_basics.pretokenization import pretokenization
 import os
+from tqdm import tqdm
+import time
+
 
 def init_vocab(special_tokens) -> dict :
     vocab = { i : bytes([i]) for i in range(256)}
@@ -31,15 +34,14 @@ def adjacent_pair(freq_table: dict) :
 
     pairs_count = dict()
 
-    for word, count in freq_table.items() :
+    for word, count in tqdm(freq_table.items()) :
         for byte1, byte2 in zip(word[:-1], word[1:]) :
             pair = (byte1, byte2)
             pairs_count[pair] = pairs_count.get(pair, 0) + count
     return pairs_count
 
-# @profile
 def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: list[str], num_processes= 1) :
-
+    start_time = time.time()
     PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
     vocab = init_vocab(special_tokens)
     merges = []
@@ -49,8 +51,14 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
         special_tokens= special_tokens,
         num_processes= num_processes
     )
+    end_time = time.time()
+    print(f"Pretokenization time: {int((end_time - start_time)*1000)/1000}s")
     pairs_count = adjacent_pair(freq_table)
 
+
+
+    origin_len = len(vocab)
+    pbar = tqdm(total= vocab_size - origin_len)
     while len(vocab) < vocab_size :
         if not pairs_count :
             break
@@ -89,20 +97,21 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
             # Update frequency table
             new_freq_table[byte_tuple] = count
         freq_table = new_freq_table
+        pbar.update(len(vocab) - origin_len - pbar.n)
+    pbar.close()
 
     return vocab, merges
 
 
 
-# input_path = "../data/TinyStoriesV2-GPT4-valid.txt"
-# vocab_size = 555
-# special_tokens = ["<|endoftext|>"]
+input_path = "../data/owt_valid.txt"
+print(input_path)
+print("YEUQUAN")
+vocab_size = 356
+special_tokens = ["<|endoftext|>"]
 
-# vocab, merges = train_bpe(input_path, vocab_size, special_tokens)
+vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes=256)
 
-# print(vocab)
-
-# print(merges)
 
                 
 
