@@ -3,6 +3,8 @@ import os
 from tqdm import tqdm
 import time
 
+from cs336_basics.utils.constant import GPT2_PRETOKENIZATION
+
 
 def init_vocab(special_tokens) -> dict :
     vocab = { i : bytes([i]) for i in range(256)}
@@ -15,25 +17,27 @@ def init_vocab(special_tokens) -> dict :
 
 def most_frequent_pair(pairs_count) :
     item = max(pairs_count.items(), key= lambda x: (x[1], x[0]))
-
     return item[0]
 
-def _merge_bytes(byte_tuple, merge_loc):
-    """
-    Merge the byte tuple at the merge location.
-    """
-    assert len(byte_tuple) > 1, "Cannot merge a byte tuple with length less than 2."
-    prefix = byte_tuple[:merge_loc]
-    tomerge = byte_tuple[merge_loc:merge_loc+2]
-    suffix = byte_tuple[merge_loc+2:]
-    new_byte_tuple = prefix + (b"".join(tomerge),) + suffix
-    return new_byte_tuple, prefix, suffix
+def _merge_bytes(byte_tuple, selected_pair):
+
+    new_byte = selected_pair[0] + selected_pair[1]
+    result = []
+    idx = 0
+    while idx < len(byte_tuple):
+        if idx < len(byte_tuple) - 1 and (byte_tuple[idx], byte_tuple[idx + 1]) == selected_pair:
+            result.append(new_byte)
+            idx += 2 
+        else:
+            result.append(byte_tuple[idx])
+            idx += 1
+    return tuple(result)
 
 
 def adjacent_pair(freq_table: dict) :
 
     pairs_count = dict()
-    pairs_to_tuples = dict() # For each key in pairs, list all byte_tuple that contain this pairs
+    pairs_to_tuples = dict() 
 
     for byte_tuple, count in tqdm(freq_table.items()) :
         for byte1, byte2 in zip(byte_tuple[:-1], byte_tuple[1:]) :
@@ -48,7 +52,7 @@ def adjacent_pair(freq_table: dict) :
 
 def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: list[str], num_processes= 1) :
     start_time = time.time()
-    PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+    PAT = GPT2_PRETOKENIZATION
     vocab = init_vocab(special_tokens)
     merges = []
     freq_table = pretokenization(
@@ -60,7 +64,6 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
     end_time = time.time()
     print(f"Pretokenization time: {int((end_time - start_time)*1000)/1000}s")
     pairs_count, pairs_to_tuples = adjacent_pair(freq_table)
-    # breakpoint()
 
 
 
@@ -79,46 +82,29 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
         new_vocab_idx = len(vocab)
         vocab[new_vocab_idx] = new_byte
 
-        # Update the pre-token frequency table and pairs_count
-        new_freq_table = {}
-        affected_tuples = list(pairs_to_tuples.get(selected_pair, set()))  # copy to avoid mutating while iterating
-        # for byte_tuple, count in freq_table.items():
+        affected_tuples = list(pairs_to_tuples.get(selected_pair, set()))  
+
         for original_byte_tuple in affected_tuples :
             count = freq_table[original_byte_tuple]
-            byte_tuple = original_byte_tuple
-            i=0
-            while i < len(byte_tuple):
-                pair = byte_tuple[i:i+2]
-                if pair == selected_pair:
-                    byte_tuple, prefix, suffix = _merge_bytes(byte_tuple, i)
-
-                    # Update pairs_count
-                    if prefix:
-                        add_pair = (prefix[-1], vocab[new_vocab_idx])
-                        pairs_count[add_pair] = pairs_count.get(add_pair, 0) + count
-                        del_pair = (prefix[-1], selected_pair[0])
-                        pairs_count[del_pair] -= count
-                    if suffix:
-                        add_pair = (vocab[new_vocab_idx], suffix[0])
-                        pairs_count[add_pair] = pairs_count.get(add_pair, 0) + count
-                        del_pair = (selected_pair[1], suffix[0])
-                        pairs_count[del_pair] -= count
-                    pairs_count[selected_pair] -= count
-                i+=1
+            byte_tuple = _merge_bytes(original_byte_tuple, selected_pair)
 
             # Update frequency table
             if byte_tuple != original_byte_tuple :
                 freq_table[byte_tuple] = count
                 del freq_table[original_byte_tuple]
-            # Update pairs_to_tuples
+
+
+            # Update pairs_to_tuples & pairs_count
             for byte1, byte2 in zip(original_byte_tuple[:-1], original_byte_tuple[1:]) :
                 old_pair = (byte1, byte2)
                 pairs_to_tuples[old_pair].discard(original_byte_tuple)
+                pairs_count[old_pair] -= count
             for byte1, byte2 in zip(byte_tuple[:-1], byte_tuple[1:]) :
                 new_pair = (byte1, byte2)
                 if new_pair not in pairs_to_tuples:  
                     pairs_to_tuples[new_pair] = set()
                 pairs_to_tuples[new_pair].add(byte_tuple)
+                pairs_count[new_pair] = pairs_count.get(new_pair, 0) + count
 
 
         pbar.update(len(vocab) - origin_len - pbar.n)
@@ -129,16 +115,14 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
 
 
 # input_path = "../data/owt_valid.txt"
-# input_path = "../data/TinyStoriesV2-GPT4-valid.txt"
-# input_path = "../data/test.txt"
+# # input_path = "./TinyStoriesV2-GPT4-train.txt"
+# # input_path = "../data/test.txt"
 # print(input_path)
-# print("YEUQUAN")
-# vocab_size = 263
+# vocab_size = 10000
 # special_tokens = ["<|endoftext|>"]
 
-# vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 1)
-# # print(vocab)
-# print(merges)
+# vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 128)
+
 
 
                 
