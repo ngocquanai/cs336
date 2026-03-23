@@ -36,7 +36,7 @@ def _merge_bytes(byte_tuple, selected_pair):
     return tuple(result)
 
 
-def adjacent_pair(freq_table: dict) :
+def count_adjacent_pair(freq_table: dict) :
 
     pairs_count = dict()
     pairs_to_tuples = dict() 
@@ -65,7 +65,7 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
     )
     end_time = time.time()
     print(f"Pretokenization time: {int((end_time - start_time)*1000)/1000}s")
-    pairs_count, pairs_to_tuples = adjacent_pair(freq_table)
+    pairs_count, pairs_to_tuples = count_adjacent_pair(freq_table)
 
 
 
@@ -160,26 +160,24 @@ def load(vocab_path, merges_path):
     return vocab, merges
 
 
-input_path = "../data/owt_train.txt"
-# input_path = "../data/TinyStoriesV2-GPT4-train.txt"
-# # input_path = "../data/test.txt"
+# input_path = "../data/owt_train.txt"
 
 
-vocab_path = "../data/owt_vocab.json"
-merges_path = "../data/owt_merges.txt"
-print(input_path)
-print(vocab_path, merges_path)
-vocab_size = 32000
-special_tokens = ["<|endoftext|>"]
+# vocab_path = "../data/owt_vocab.json"
+# merges_path = "../data/owt_merges.txt"
+# print(input_path)
+# print(vocab_path, merges_path)
+# vocab_size = 32000
+# special_tokens = ["<|endoftext|>"]
 
-vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 256)
+# vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 256)
 
-save(vocab, merges, vocab_path= vocab_path, merges_path= merges_path)
+# save(vocab, merges, vocab_path= vocab_path, merges_path= merges_path)
 
-saved_vocab, saved_merges = load(vocab_path, merges_path)
+# saved_vocab, saved_merges = load(vocab_path, merges_path)
 
-print(vocab == saved_vocab)
-print(merges == saved_merges)
+# print(vocab == saved_vocab)
+# print(merges == saved_merges)
 
 
 
