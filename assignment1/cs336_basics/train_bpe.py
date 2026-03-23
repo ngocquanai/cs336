@@ -2,6 +2,8 @@ from cs336_basics.pretokenization import pretokenization
 import os
 from tqdm import tqdm
 import time
+import json
+import base64
 
 from cs336_basics.utils.constant import GPT2_PRETOKENIZATION
 
@@ -112,16 +114,77 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
 
     return vocab, merges
 
+### save() and load() function are not my own implementation
+def save(vocab, merges, vocab_path, merges_path) :
+    """
+    Persist vocab and merges to disk.
+
+    vocab_path  : JSON file  { "<int idx>" : "<base64-encoded bytes>" }
+    merges_path : text file, one merge per line: "<hex_a> <hex_b>"
+                  where hex_a / hex_b are the two byte-sequences being merged,
+                  encoded as hex strings (e.g. "68656c6c6f 20776f726c64").
+    """
+    # --- vocab ---
+    serialisable = {
+        str(idx): base64.b64encode(token_bytes).decode('ascii')
+        for idx, token_bytes in vocab.items()
+    }
+    with open(vocab_path, 'w', encoding='utf-8') as f:
+        json.dump(serialisable, f, indent=2)
+
+    # --- merges ---
+    with open(merges_path, 'w', encoding='utf-8') as f:
+        for left, right in merges:
+            f.write(f"{left.hex()} {right.hex()}\n")
 
 
-# input_path = "../data/owt_valid.txt"
-# # input_path = "./TinyStoriesV2-GPT4-train.txt"
+def load(vocab_path, merges_path):
+    """
+    Inverse of save().
+    Returns vocab  : dict[int, bytes]
+            merges : list[tuple[bytes, bytes]]
+    """
+    with open(vocab_path, 'r', encoding='utf-8') as f:
+        raw = json.load(f)
+    vocab = {int(idx): base64.b64decode(b64) for idx, b64 in raw.items()}
+
+    merges = []
+    with open(merges_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            left_hex, right_hex = line.split()
+            merges.append((bytes.fromhex(left_hex), bytes.fromhex(right_hex)))
+
+    return vocab, merges
+
+
+input_path = "../data/owt_train.txt"
+# input_path = "../data/TinyStoriesV2-GPT4-train.txt"
 # # input_path = "../data/test.txt"
-# print(input_path)
-# vocab_size = 10000
-# special_tokens = ["<|endoftext|>"]
 
-# vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 128)
+
+vocab_path = "../data/owt_vocab.json"
+merges_path = "../data/owt_merges.txt"
+print(input_path)
+print(vocab_path, merges_path)
+vocab_size = 32000
+special_tokens = ["<|endoftext|>"]
+
+vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 256)
+
+save(vocab, merges, vocab_path= vocab_path, merges_path= merges_path)
+
+saved_vocab, saved_merges = load(vocab_path, merges_path)
+
+print(vocab == saved_vocab)
+print(merges == saved_merges)
+
+
+
+
+
 
 
 
