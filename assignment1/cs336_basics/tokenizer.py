@@ -30,7 +30,7 @@ class Tokenizer() :
 
     
     @classmethod
-    def from_files(cls, vocab_filepath, merges_filepath, special_tokens=None) :
+    def from_files(cls, vocab_filepath: str, merges_filepath: str, special_tokens=None) :
         vocab, merges = load_vocab_merges(vocab_filepath, merges_filepath)
         return cls(vocab, merges, special_tokens)
     
@@ -55,7 +55,7 @@ class Tokenizer() :
             for token_id in token_ids :
                 yield token_id
 
-    def decode(self, token_ids) -> str:
+    def decode(self, token_ids: list[int]) -> str:
         decoded_bytes = b""
         for token_id in token_ids :
             decoded_bytes += self.vocab["int_to_bytes"][token_id]
@@ -94,7 +94,7 @@ class Tokenizer() :
 
 
 
-    def merge(self, bytes_list: list, merge_pair: tuple) :
+    def merge(self, bytes_list: list, merge_pair: tuple) -> list :
         idx = 0
         new_bytes_list = []
         while idx < len(bytes_list) :

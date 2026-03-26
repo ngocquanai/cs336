@@ -11,7 +11,7 @@ from torch import Tensor
 
 from cs336_basics.train_bpe import *
 from cs336_basics.tokenizer import Tokenizer
-
+from cs336_basics.layers import *
 
 def run_linear(
     d_in: int,
@@ -32,7 +32,10 @@ def run_linear(
         Float[Tensor, "... d_out"]: The transformed output of your linear module.
     """
 
-    raise NotImplementedError
+    # raise NotImplementedError
+    linear = Linear(in_features= d_in, out_features= d_out)
+    linear.load_state_dict({"W": weights})
+    return linear(in_features)
 
 
 def run_embedding(
@@ -54,7 +57,10 @@ def run_embedding(
         Float[Tensor, "... d_model"]: Batch of embeddings returned by your Embedding layer.
     """
 
-    raise NotImplementedError
+    embedding = Embedding(num_embeddings= vocab_size, embedding_dim= d_model)
+    embedding.load_state_dict({"W": weights})
+
+    return embedding(token_ids)
 
 
 def run_swiglu(
@@ -86,7 +92,11 @@ def run_swiglu(
     # swiglu.w1.weight.data = w1_weight
     # swiglu.w2.weight.data = w2_weight
     # swiglu.w3.weight.data = w3_weight
-    raise NotImplementedError
+    # raise NotImplementedError
+    swiglu = SwiGLU(d_model= d_model, d_ff= d_ff)
+    weights = {"W1": w1_weight, "W2": w2_weight, "W3": w3_weight}
+    swiglu.load_state_dict(weights)
+    return swiglu(in_features)
 
 
 def run_scaled_dot_product_attention(
@@ -203,7 +213,11 @@ def run_rope(
     Returns:
         Float[Tensor, " ... sequence_length d_k"]: Tensor with RoPEd input.
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    rope = RoPE(theta= theta, d_k= d_k, max_seq_len= max_seq_len)
+
+    return rope(in_query_or_key, token_positions)
+    
 
 
 def run_transformer_block(
@@ -381,7 +395,12 @@ def run_rmsnorm(
         Float[Tensor,"... d_model"]: Tensor of with the same shape as `in_features` with the output of running
         RMSNorm of the `in_features`.
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+
+    rmsnorm = RMSNorm(d_model= d_model, eps= eps)
+    rmsnorm.load_state_dict({"weight": weights})
+
+    return rmsnorm(in_features)
 
 
 def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:

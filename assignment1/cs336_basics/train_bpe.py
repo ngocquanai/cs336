@@ -9,7 +9,7 @@ from cs336_basics.utils.constant import GPT2_PRETOKENIZATION
 from cs336_basics.utils.io import save_vocab_merges, load_vocab_merges
 
 
-def init_vocab(special_tokens) -> dict :
+def init_vocab(special_tokens: list[str]) -> dict :
     vocab = { i : bytes([i]) for i in range(256)}
 
     # add special tokens
@@ -53,7 +53,7 @@ def count_adjacent_pair(freq_table: dict) :
 
     return pairs_count, pairs_to_tuples
 
-def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: list[str], num_processes= 1) :
+def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: list[str], num_processes: int = 1) :
     start_time = time.time()
     PAT = GPT2_PRETOKENIZATION
     vocab = init_vocab(special_tokens)
@@ -117,18 +117,18 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
     return vocab, merges
 
 
-input_path = "../data/test.txt"
+# input_path = "../data/test.txt"
 
-vocab_path = "../data/TinyStories_vocab.json"
-merges_path = "../data/TinyStories_merges.txt"
-print(input_path)
-print(vocab_path, merges_path)
-vocab_size = 282
-special_tokens = ["<|endoftext|>"]
+# vocab_path = "../data/TinyStories_vocab.json"
+# merges_path = "../data/TinyStories_merges.txt"
+# print(input_path)
+# print(vocab_path, merges_path)
+# vocab_size = 282
+# special_tokens = ["<|endoftext|>"]
 
 
 
-vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 256)
+# vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 256)
 
 # save_vocab_merges(vocab, merges, vocab_path= vocab_path, merges_path= merges_path)
 
