@@ -242,10 +242,9 @@ class TransformerLM(nn.Module) :
         x = self.token_embeddings(token_ids)
         x = self.layers(x)
         x = self.final_norm(x)
-        x = self.head(x, dim= -1)
-        x = softmax(x)
+        logits = self.head(x)
 
-        return x
+        return logits
 
 
 
