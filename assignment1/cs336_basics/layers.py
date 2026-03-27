@@ -228,10 +228,10 @@ class TransformerLM(nn.Module) :
 
         self.token_embeddings = Embedding(num_embeddings= vocab_size, embedding_dim= d_model, device= device, dtype= dtype)
         self.layers = nn.Sequential(
-            TransformerBlock(
+            *[TransformerBlock(
                 d_model= d_model, num_heads= num_heads, d_ff= d_ff, theta= rope_theta, max_seq_len= context_length,
                 device= device, dtype= dtype
-            )
+            ) for layer in range(num_layers)]
         )
         self.final_norm = RMSNorm(
             d_model= d_model, device= device, dtype= dtype
@@ -242,7 +242,7 @@ class TransformerLM(nn.Module) :
         x = self.token_embeddings(token_ids)
         x = self.layers(x)
         x = self.final_norm(x)
-        x = self.head(x)
+        x = self.head(x, dim= -1)
         x = softmax(x)
 
         return x

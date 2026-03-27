@@ -406,8 +406,35 @@ def run_transformer_lm(
         vocab_size= vocab_size, context_length= context_length, num_layers= num_layers,
         d_model= d_model, num_heads= num_heads, d_ff= d_ff, rope_theta= rope_theta
     )
+    new_weights = dict()
+    new_weights["token_embeddings.W"] = weights["token_embeddings.weight"]
 
-    transformer_lm.load_state_dict(weights)
+    for layer in range(num_layers) :
+        prefix = f"layers.{layer}."
+
+        q_proj_weight = weights[prefix + "attn.q_proj.weight"]
+        k_proj_weight = weights[prefix + "attn.k_proj.weight"]
+        v_proj_weight = weights[prefix + "attn.v_proj.weight"]
+        qkv_proj_weight = torch.cat((q_proj_weight, k_proj_weight, v_proj_weight), dim= -2)
+
+        transformer_block_weight = {
+        f"{prefix}attn_norm.weight": weights[prefix + "ln1.weight"],
+        f"{prefix}ffn_norm.weight": weights[prefix + "ln2.weight"],
+        f"{prefix}attn.output.W": weights[prefix + "attn.output_proj.weight"],
+        f"{prefix}ffn.W1": weights[prefix + "ffn.w1.weight"],
+        f"{prefix}ffn.W2": weights[prefix + "ffn.w2.weight"],
+        f"{prefix}ffn.W3": weights[prefix + "ffn.w3.weight"],
+        f"{prefix}attn.QKV.W": qkv_proj_weight
+        }
+        new_weights.update(transformer_block_weight)
+
+    new_weights["final_norm.weight"] = weights["ln_final.weight"]
+    new_weights["head.W"] = weights["lm_head.weight"]
+
+
+    
+
+    transformer_lm.load_state_dict(new_weights)
 
     return transformer_lm(in_indices)
 
