@@ -11,8 +11,7 @@ class CrossEntropyLoss(nn.Module) :
                                           = log(sum(e**x)) - log e**x[i]) = log(sum(e**x)) - x[i]
         """
         # Minus max value for numerical stability
-        scale_logits = logits - torch.max(logits, dim= -1, keepdim= True).values
-        breakpoint() 
+        scale_logits = logits - torch.max(logits, dim= -1, keepdim= True).values 
         
         e_logits = torch.exp(scale_logits)
         log_sum = torch.log(torch.sum(e_logits, dim=-1, keepdim= False))
@@ -21,10 +20,3 @@ class CrossEntropyLoss(nn.Module) :
         total_loss = log_sum - logits_idx
         return torch.mean(total_loss)
 
-criteria = CrossEntropyLoss()
-
-logits = torch.Tensor([[2, 1, 2], [3, 1, 1]])
-
-targets = torch.Tensor([1, 0])
-
-print(criteria(logits, targets))
