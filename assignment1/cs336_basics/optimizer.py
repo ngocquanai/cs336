@@ -3,6 +3,18 @@ import math
 from collections.abc import Callable, Iterable
 from typing import Optional
 
+
+def learning_rate_schedule(t, alpha_min, alpha_max, T_w, T_c) :
+
+    if t < T_w : # warm up
+        return t/T_w * alpha_max
+    elif t >= T_w and t <= T_c : # cosine annealing
+        return alpha_min + 1/2 * (alpha_max - alpha_min) * (1 + math.cos(math.pi * (t - T_w) / (T_c - T_w)))
+    else : # post-annealing
+        return alpha_min
+
+
+
 class SGD(torch.optim.Optimizer) :
     def __init__(self, params, lr= 1e-3) :
         if lr < 0 :
@@ -66,6 +78,9 @@ class AdamW(torch.optim.Optimizer) :
                 state["t"] = t + 1
                 state["first_moment"] = first_moment
                 state["second_moment"] = second_moment
+
+
+
 
 
 

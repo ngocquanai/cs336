@@ -25,6 +25,22 @@ def scale_dot_product_attention(Q: torch.Tensor, K: torch.Tensor, V: torch.Tenso
     return output
 
 
+def gradient_clipping(parameters, max_norm, eps=1e-6) :
+    total_norm = sum([torch.sum(param.grad ** 2) for param in parameters if param.grad is not None])
+    total_norm = total_norm ** 0.5
+
+    if total_norm > max_norm :
+        for param in parameters :
+            if param.grad is None :
+                continue
+            param.grad.data = param.grad.data /(total_norm + eps) * max_norm
+
+
+        
+
+
+
+
 
 
 

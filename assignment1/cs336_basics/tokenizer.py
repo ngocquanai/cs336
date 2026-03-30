@@ -1,8 +1,9 @@
 from cs336_basics.utils.constant import GPT2_PRETOKENIZATION
 from cs336_basics.utils.io import load_vocab_merges
-
 import regex as re
 
+from cs336_basics.pretokenization import find_chunk_boundaries
+from multiprocessing import Pool
 
 
 class Tokenizer() :
@@ -108,7 +109,41 @@ class Tokenizer() :
         return new_bytes_list
     
 
+
+def tokenize_data(tokenizer, filepath, special_token, num_processes= 128) :
+    with open(filepath, "rb") as file :
+        boundaries = find_chunk_boundaries(file, num_processes, split_special_token= special_token.encode('utf-8'))
+
+    chunks_args = [(tokenizer, filepath, start, end) for start, end in zip(boundaries[:-1], boundaries[1:])]
+
+    with Pool(processes=num_processes) as pool :
+        token_ids_list = pool.map(tokenize_chunk, chunks_args)
+
+    total_token_ids = []
+    for token_ids in token_ids_list :
+        total_token_ids += token_ids 
+
+    return total_token_ids
+
+
+
+
+def tokenize_chunk(args) :
+    tokenizer, filepath, start, end = args
+    print(f"Processing chunk: {start} to {end}")
+    with open(filepath, "rb") as file :
+        file.seek(start)
+        text = file.read(end - start).decode("utf-8")
+        token_ids = tokenizer.encode(text)
         
+    print(f"Chunk {start}-{end}: generated {len(token_ids)} tokens")
+    return token_ids
+        
+        
+
+
+
+
 
 # special_tokens = ["<|endoftext|>", "<|end|>"]
 # tokenizer = Tokenizer.from_files("../data/TinyStories_vocab.json", "../data/TinyStories_merges.txt", special_tokens= special_tokens)
