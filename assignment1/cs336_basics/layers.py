@@ -171,7 +171,7 @@ class MultiHeadSelfAttention(nn.Module) :
         self.output = Linear(in_features= int(num_heads * self.d_v), out_features= d_model, device= device, dtype= dtype)
         self.rope = RoPE(theta= theta, d_k= self.d_k, max_seq_len= max_seq_len)
 
-    def forward(self, x: torch.Tensor, token_positions: torch.Tensor) :
+    def forward(self, x: torch.Tensor, token_positions: torch.Tensor | None) :
         QKV = self.QKV(x)
         Q = QKV[..., 0: int(self.num_heads * self.d_k)]
         K = QKV[..., int(self.num_heads * self.d_k) : int(2* self.num_heads * self.d_k)]
@@ -182,6 +182,13 @@ class MultiHeadSelfAttention(nn.Module) :
         V = rearrange(V, "... seq_len (num_heads d_v) -> ... num_heads seq_len d_v", num_heads= self.num_heads, d_v = self.d_v)
 
         # Use rotary position embedding
+        if not token_positions :
+            seq_len = Q.shape[-2]
+            token_position = torch.arange(seq_len)
+            shape_list = list(Q.shape)[:-1] # exclude the last dimension (d_model): ... seq_len
+            token_positions = token_position.expand(*shape_list)
+
+
         Q = self.rope(Q, token_positions= token_positions)
         K = self.rope(K, token_positions= token_positions)
 
@@ -206,11 +213,6 @@ class TransformerBlock(nn.Module) :
 
     def forward(self, x: torch.Tensor, token_positions: torch.Tensor | None = None) :
 
-        if not token_positions :
-            seq_len = x.shape[-2]
-            token_position = torch.arange(seq_len)
-            shape_list = list(x.shape)[:-1] # exclude the last dimension (d_model): ... seq_len
-            token_positions = token_position.expand(*shape_list)
 
         x = x + self.attn(self.attn_norm(x), token_positions)
         x = x + self.ffn(self.ffn_norm(x))
