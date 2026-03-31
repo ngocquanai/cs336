@@ -2,9 +2,7 @@ import torch
 import torch.nn as nn
 
 import numpy as np
+import random
 
 
-a = [np.array([1,2,3]), np.array([4,5,6])]
-b = np.array(a)
-breakpoint()
-print(b)
+print(random.choices(range(5), k= 10))

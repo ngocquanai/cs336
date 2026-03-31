@@ -1,0 +1,29 @@
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/token_ids.npy \
+  --valid_path ../data/token_ids.npy \
+  --vocab_size 10000 \
+  --context_len 256 \
+  --num_layers 6 \
+  --d_model 512 \
+  --d_ff 2048 \
+  --num_heads 8 \
+  --rope_theta 10000.0 \
+  --dtype float32 \
+  --batch_size 2 \
+  --device cpu \
+  --lr 3e-4 \
+  --lr_scheduler cosine \
+  --max_steps 100000 \
+  --optimizer adamw \
+  --betas 0.9 0.99 \
+  --weight_decay 0.1 \
+  --optim_eps 1e-8 \
+  --min_lr 1e-5 \
+  --max_lr 3e-4 \
+  --T_warmup 2000 \
+  --T_cosine 100000 \
+  --eval_period 1000 \
+  --eval_batch 100 \
+  --saved_path ./checkpoints \
+  --save_period 5000

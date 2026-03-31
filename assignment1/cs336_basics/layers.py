@@ -221,8 +221,16 @@ class TransformerBlock(nn.Module) :
 
 class TransformerLM(nn.Module) :
     def __init__(
-        self, vocab_size: int, context_length: int, num_layers: int, d_model: int, num_heads: int, d_ff: int, rope_theta: float,
-        device: torch.device|None = None, dtype: torch.dtype|None = None
+        self,
+        vocab_size: int, 
+        context_length: int, 
+        num_layers: int, 
+        d_model: int, 
+        num_heads: int, 
+        d_ff: int, 
+        rope_theta: float,
+        device: torch.device|None = None, 
+        dtype: torch.dtype|None = None
     ) :
         super().__init__()
 

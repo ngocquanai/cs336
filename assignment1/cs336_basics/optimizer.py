@@ -1,7 +1,9 @@
+from typing_extensions import override
 import torch
 import math
 from collections.abc import Callable, Iterable
 from typing import Optional
+
 
 
 def learning_rate_schedule(t, alpha_min, alpha_max, T_w, T_c) :
@@ -41,7 +43,7 @@ class SGD(torch.optim.Optimizer) :
         return loss
 
 class AdamW(torch.optim.Optimizer) :
-    def __init__(self, params, lr: float= 1e-3, betas: tuple[float] = (0.9, 0.99), weight_decay: float= 0.1, eps: float= 1e-8) :
+    def __init__(self, params, lr: float= 1e-3, betas: tuple[float, float] = (0.9, 0.99), weight_decay: float= 0.1, eps: float= 1e-8) :
         if lr < 0 :
             raise ValueError(f"Invalid learning rate value: {lr}")
         
@@ -78,6 +80,54 @@ class AdamW(torch.optim.Optimizer) :
                 state["t"] = t + 1
                 state["first_moment"] = first_moment
                 state["second_moment"] = second_moment
+
+        return loss
+
+
+
+class WarmupCosineAnnealingLR(torch.optim.lr_scheduler.LRScheduler) :
+    def __init__(
+        self, 
+        optimizer: torch.optim.Optimizer, 
+        alpha_min: float,
+        alpha_max: float, 
+        T_warmup: int,
+        T_cosine: int,
+        last_epoch: int = -1
+    ):
+
+        self.alpha_min = alpha_min
+        self.alpha_max = alpha_max
+        self.T_warmup = T_warmup
+        self.T_cosine = T_cosine
+        super().__init__(optimizer, last_epoch)
+
+    
+
+    @override
+    def get_lr(self) -> list[float | torch.Tensor]:
+        r"""Compute the next learning rate for each of the optimizer's
+        :attr:`~torch.optim.Optimizer.param_groups`.
+
+        Returns:
+            list[float | Tensor]: A :class:`list` of learning rates for each of
+            the optimizer's :attr:`~torch.optim.Optimizer.param_groups` with the
+            same types as their current ``group["lr"]``\s.
+
+        .. note::
+            If you're trying to inspect the most recent learning rate, use
+            :meth:`get_last_lr()` instead.
+
+        .. note::
+            The returned :class:`~torch.Tensor`\s are copies, and never alias
+            the optimizer's ``group["lr"]``\s.
+        """
+        t = self.last_epoch
+
+        lr = learning_rate_schedule(t, alpha_min= self.alpha_min, alpha_max= self.alpha_max, T_w= self.T_warmup, T_c= self.T_cosine)
+
+        return [lr for _ in self.optimizer.param_groups]
+        # raise NotImplementedError
 
 
 
