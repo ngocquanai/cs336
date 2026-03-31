@@ -182,7 +182,7 @@ class MultiHeadSelfAttention(nn.Module) :
         V = rearrange(V, "... seq_len (num_heads d_v) -> ... num_heads seq_len d_v", num_heads= self.num_heads, d_v = self.d_v)
 
         # Use rotary position embedding
-        if not token_positions :
+        if token_positions is None :
             seq_len = Q.shape[-2]
             token_position = torch.arange(seq_len)
             shape_list = list(Q.shape)[:-1] # exclude the last dimension (d_model): ... seq_len
