@@ -11,7 +11,7 @@ uv run python cs336_basics/main.py \
   --dtype float32 \
   --batch_size 24 \
   --device cuda \
-  --lr 3e-4 \
+  --lr 1.25e-3 \
   --lr_scheduler cosine \
   --max_steps 50000 \
   --optimizer adamw \
@@ -19,7 +19,7 @@ uv run python cs336_basics/main.py \
   --weight_decay 0.1 \
   --optim_eps 1e-8 \
   --min_lr 1e-5 \
-  --max_lr 3e-4 \
+  --max_lr 1.25e-3 \
   --T_warmup 500 \
   --T_cosine 40000 \
   --eval_period 5000 \
@@ -29,4 +29,4 @@ uv run python cs336_basics/main.py \
   --wandb \
   --ablation \
   --ablation_part max_lr \
-  --ablation_value 3e-4 
+  --ablation_value 1.25e-3 

@@ -117,25 +117,6 @@ def train_bpe(input_path: str | os.PathLike, vocab_size: int, special_tokens: li
     return vocab, merges
 
 
-# input_path = "../data/test.txt"
-
-# vocab_path = "../data/TinyStories_vocab.json"
-# merges_path = "../data/TinyStories_merges.txt"
-# print(input_path)
-# print(vocab_path, merges_path)
-# vocab_size = 282
-# special_tokens = ["<|endoftext|>"]
-
-
-
-# vocab, merges = train_bpe(input_path, vocab_size, special_tokens, num_processes= 256)
-
-# save_vocab_merges(vocab, merges, vocab_path= vocab_path, merges_path= merges_path)
-
-# saved_vocab, saved_merges = load_vocab_merges(vocab_path, merges_path)
-
-# print(vocab == saved_vocab)
-# print(merges == saved_merges)
 
 
 

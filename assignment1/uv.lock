@@ -148,7 +148,7 @@ requires-dist = [
     { name = "torch", marker = "platform_machine == 'x86_64' and sys_platform == 'darwin'", specifier = "~=2.2.2" },
     { name = "tqdm", specifier = ">=4.67.1" },
     { name = "ty", specifier = ">=0.0.1a16" },
-    { name = "wandb", specifier = ">=0.19.7" },
+    { name = "wandb", specifier = "==0.22.3" },
 ]
 
 [[package]]
@@ -1098,7 +1098,7 @@ wheels = [
 
 [[package]]
 name = "wandb"
-version = "0.21.2"
+version = "0.22.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -1112,15 +1112,15 @@ dependencies = [
     { name = "sentry-sdk" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/43/c9/5bda7a96a93127057e65890a6070172382311f1226bceb4597ee44d55041/wandb-0.21.2.tar.gz", hash = "sha256:39c14e21013904669cebf0e09b3a39a2a1370673685a822a23be3f97cdc71e95", size = 40147079, upload-time = "2025-08-28T22:50:25.296Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c1/d1/6b70f365ed86bd69debba8ad55dec8606fc21006e7ca703a5a091bd3b719/wandb-0.22.3.tar.gz", hash = "sha256:04468a8ab2769a46f5e384c9c4ada5da0dced005ca689a8424e4b8b5cb2a0291", size = 44337368, upload-time = "2025-10-28T23:59:10.275Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c3/ff/7c024d09dd32a287df7df5ce449618c57c11ba944fa6aca7d5fcd02c00f6/wandb-0.21.2-py3-none-macosx_10_14_x86_64.whl", hash = "sha256:9c9ea54555f7c7219a1d6bf042d17f2f9866e8e7ff22fdacff5a05931223acb3", size = 18819940, upload-time = "2025-08-28T22:50:04.292Z" },
-    { url = "https://files.pythonhosted.org/packages/58/7d/b6ded7403cc03b57dbc72b7ecf83bc105cf9e5d2de68c71d4e84e7a86dff/wandb-0.21.2-py3-none-macosx_12_0_arm64.whl", hash = "sha256:8c7a93581d92ece036aa01ac259f0df7c7613c7c038fb38a85b5be97a1fb6670", size = 18310362, upload-time = "2025-08-28T22:50:07.224Z" },
-    { url = "https://files.pythonhosted.org/packages/3f/43/f89c25f03c9f1f3054a28003c85772907653b48dfb52e4fc29ce426360b0/wandb-0.21.2-py3-none-macosx_12_0_x86_64.whl", hash = "sha256:a9fe0b582e9ac9c357ed0a3dd1b57493ec0e138e872b0ece1ed36258de31795c", size = 19053016, upload-time = "2025-08-28T22:50:09.494Z" },
-    { url = "https://files.pythonhosted.org/packages/50/9f/65449f396db8aea3438b381b2aaad3f1480db104d241065f30d17763b4fb/wandb-0.21.2-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:179d8cc81522fd54baf022bdfbc13fa66660d1606d8351f086d0c4d3b56e8162", size = 18130577, upload-time = "2025-08-28T22:50:11.801Z" },
-    { url = "https://files.pythonhosted.org/packages/0a/d5/c5a6d7280ca9097fd4dd6f17cc66906b85e55465fbb2a769818b25d79e2d/wandb-0.21.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d64a8e8fc98fc15436a8d8474dc744da2a7caecf88730b614461b7657c9fa49c", size = 19570027, upload-time = "2025-08-28T22:50:13.793Z" },
-    { url = "https://files.pythonhosted.org/packages/98/7e/fc1acec5ecc5c63c867063733a4ebf6e7a09e8340896fd607a3e9da541ca/wandb-0.21.2-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:645dd539b81c1636fe464b9dcd25d58940dd43ea588db3697e310542ee5c7886", size = 18135533, upload-time = "2025-08-28T22:50:15.87Z" },
-    { url = "https://files.pythonhosted.org/packages/fe/a1/9f6c96232076d8a46da76c5c02adfe2c39e77e11c4f797a5858a0755c9d2/wandb-0.21.2-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:39a836e6a0d42799c8dfd460da19f42014c1a4dcb2b3eacf86f0715752de0429", size = 19646482, upload-time = "2025-08-28T22:50:18.177Z" },
-    { url = "https://files.pythonhosted.org/packages/a2/e9/444b2a4455d5ef756fad52d9a55cf6a4de4095a33732081c49512b1f3c8b/wandb-0.21.2-py3-none-win32.whl", hash = "sha256:072c9c6829796c3866cd41197e6c76d86b84d10efa8c1760149dc4f704e0233e", size = 18709145, upload-time = "2025-08-28T22:50:20.628Z" },
-    { url = "https://files.pythonhosted.org/packages/27/40/cf5e7e2428e0eee13a925c24e3b0741671e9f068c13d9cc13e91546df474/wandb-0.21.2-py3-none-win_amd64.whl", hash = "sha256:d95d8aa5b8900296369a769693eb4671419f9f7448562a0b9c74b26e68b120a5", size = 18709148, upload-time = "2025-08-28T22:50:22.904Z" },
+    { url = "https://files.pythonhosted.org/packages/23/02/87fb60f587ec249f784a40bd91c30de1b2b24d691ee72675d5b66c3d0728/wandb-0.22.3-py3-none-macosx_12_0_arm64.whl", hash = "sha256:81b3b6e405f38342b0a080898b7d00c5b9375432f5ba358942a09e65cdcfe781", size = 18758047, upload-time = "2025-10-28T23:58:46.56Z" },
+    { url = "https://files.pythonhosted.org/packages/26/88/64081740ef2b2efc7fbcb2139a07a849e42bcb09ae0c56ae50c41bd0ad63/wandb-0.22.3-py3-none-macosx_12_0_x86_64.whl", hash = "sha256:d29c16817cca6401b4919069ec7570c781eacb67dc0b1ff2e0096a9a59581720", size = 19798011, upload-time = "2025-10-28T23:58:49.718Z" },
+    { url = "https://files.pythonhosted.org/packages/19/72/c4f922b33dbb84d1c81ee045ff8791dd14e26d79e1e9bbafff964b7043e2/wandb-0.22.3-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bb955d73a4ba55df9adc61fafbabef5556784d33fc39c7b5c8165d2694ddeb3b", size = 18542713, upload-time = "2025-10-28T23:58:51.927Z" },
+    { url = "https://files.pythonhosted.org/packages/ad/98/3ce5f6e2086d91b0c51b38ae7ff591109e7da2bb25fe1a12eec0cdbaa494/wandb-0.22.3-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:23f3ebe41a26506117a098fdfd2706ed0e50b37899bfbefe3a0628fcbd70c69d", size = 19984910, upload-time = "2025-10-28T23:58:54.641Z" },
+    { url = "https://files.pythonhosted.org/packages/5e/57/e68cb38427b60490d6ddf1b992e6c7f36be83be1079d291ce87a8d347f48/wandb-0.22.3-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:2973462bed5d4a653b1a97cf9fc350673bb200fb356a2f4eba34beae9b87e0aa", size = 18581776, upload-time = "2025-10-28T23:58:56.975Z" },
+    { url = "https://files.pythonhosted.org/packages/66/6d/543f907ce0c6b6da13628b23d19ca7282c559fd73eb47b04977b9a61d0c6/wandb-0.22.3-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:c5c2bd18f95c1639863c527da0a5818ac6b0e5194f9c691426b265908ddd8b2c", size = 20078800, upload-time = "2025-10-28T23:58:59.217Z" },
+    { url = "https://files.pythonhosted.org/packages/da/91/1decaf1a6ac2017481c782e0fad7f90bc9ae4057f3d76d478cb6527f3dd3/wandb-0.22.3-py3-none-win32.whl", hash = "sha256:09ca1edfe0fd6dc30447d368acddb825668e60ee705c98594a6bbfd30d34d47e", size = 19160297, upload-time = "2025-10-28T23:59:01.536Z" },
+    { url = "https://files.pythonhosted.org/packages/4c/ba/3b092634279994b0c79fe05220532822be09f3a353ae95c54e7142769db8/wandb-0.22.3-py3-none-win_amd64.whl", hash = "sha256:55403bf93872c9978433d101324f51e43e78c70c809bf6d06ca7b2760e39f497", size = 19160300, upload-time = "2025-10-28T23:59:04.06Z" },
+    { url = "https://files.pythonhosted.org/packages/7f/80/4662fce9eebcc8c71f5083e9152ccaf7d43d4ca9c446e1422f9aa784a51c/wandb-0.22.3-py3-none-win_arm64.whl", hash = "sha256:49f66b05882abfa53816cc8d01b3c2435a89c5a090176802fa6928b5979d34d9", size = 17461959, upload-time = "2025-10-28T23:59:07.059Z" },
 ]

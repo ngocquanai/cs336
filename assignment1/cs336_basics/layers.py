@@ -96,11 +96,11 @@ class SwiGLU(nn.Module) :
 
 
 class RoPE(nn.Module) :
-    def __init__(self, theta: float, d_k: int, max_seq_len: int, device: torch.device | None = None) :
+    def __init__(self, theta: float, d_k: int, max_seq_len: int, device: torch.device | None = None, dtype: torch.dtype | None = None) :
         super().__init__()
         seq_idx = torch.arange(max_seq_len, device = device).float()
 
-        dim_idx = 1.0 / (theta ** (torch.arange(0, d_k, 2, device=device).float() / d_k))
+        dim_idx = 1.0 / (theta ** (torch.arange(0, d_k, 2, device=device).to(dtype) / d_k))
 
         angles = einsum(seq_idx, dim_idx, "seq, dim -> seq dim") # max_seq_len, d_k // 2
 
@@ -112,13 +112,11 @@ class RoPE(nn.Module) :
 
 
     def forward(self, x: torch.Tensor, token_positions: torch.Tensor) :
-
-        cos_values = self.cos_values[token_positions]
-        sin_values = self.sin_values[token_positions]
+        cos_values = self.cos_values[token_positions]  # pyright: ignore[reportIndexIssue]
+        sin_values = self.sin_values[token_positions]  # pyright: ignore[reportIndexIssue]
 
         x_even = x[..., 0::2]
         x_odd = x[..., 1::2]
-
         rotated_x_even = x_even * cos_values - x_odd * sin_values 
         rotated_x_odd = x_even * sin_values + x_odd * cos_values
 
@@ -169,7 +167,9 @@ class MultiHeadSelfAttention(nn.Module) :
 
         self.QKV = Linear(in_features= d_model, out_features= int(3 * num_heads*self.d_k), device= device, dtype= dtype)
         self.output = Linear(in_features= int(num_heads * self.d_v), out_features= d_model, device= device, dtype= dtype)
-        self.rope = RoPE(theta= theta, d_k= self.d_k, max_seq_len= max_seq_len)
+        self.rope = RoPE(theta= theta, d_k= self.d_k, max_seq_len= max_seq_len, device= device, dtype= dtype)
+        self.device = device
+        self.dtype = dtype
 
     def forward(self, x: torch.Tensor, token_positions: torch.Tensor | None) :
         QKV = self.QKV(x)
@@ -184,7 +184,7 @@ class MultiHeadSelfAttention(nn.Module) :
         # Use rotary position embedding
         if token_positions is None :
             seq_len = Q.shape[-2]
-            token_position = torch.arange(seq_len)
+            token_position = torch.arange(seq_len, device= self.device)
             shape_list = list(Q.shape)[:-1] # exclude the last dimension (d_model): ... seq_len
             token_positions = token_position.expand(*shape_list)
 
@@ -193,10 +193,9 @@ class MultiHeadSelfAttention(nn.Module) :
         K = self.rope(K, token_positions= token_positions)
 
         seq_len = x.shape[-2]
-        mask = ~torch.triu(torch.ones(seq_len, seq_len), diagonal= 1).bool()
+        mask = ~torch.triu(torch.ones(seq_len, seq_len, device= self.device), diagonal= 1).bool()
         attention = scale_dot_product_attention(Q, K, V, mask= mask) # ... num_heads seq_len d_v
         attention = rearrange(attention, "... num_heads seq_len d_v -> ... seq_len (num_heads d_v)")
-
         return self.output(attention)
 
 
@@ -246,7 +245,7 @@ class TransformerLM(nn.Module) :
         self.final_norm = RMSNorm(
             d_model= d_model, device= device, dtype= dtype
         )
-        self.head = Linear(in_features= d_model, out_features= vocab_size)
+        self.head = Linear(in_features= d_model, out_features= vocab_size, device= device, dtype= dtype)
 
     def forward(self, token_ids) :
         x = self.token_embeddings(token_ids)

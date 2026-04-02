@@ -19,7 +19,6 @@ def text_to_ids(text_file, vocab_file, merges_file, saved_path, special_tokens= 
     np.save(saved_path, token_ids)
     print(f"Successful saved to {saved_path}")
 
-# text_to_ids(text_file, vocab_path, merges_path, saved_path, special_tokens= special_tokens, num_processes= 128)
 
 
 def data_loading(dataset, batch_size, context_len, device) :

@@ -1,0 +1,104 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            zijv0ka0m11cxdgwukvfhity00jdxcyr:
+                args:
+                    - --train_path
+                    - ../data/owt-train_token_ids.npy
+                    - --valid_path
+                    - ../data/owt-val_token_ids.npy
+                    - --vocab_size
+                    - "32000"
+                    - --context_len
+                    - "1024"
+                    - --num_layers
+                    - "12"
+                    - --d_model
+                    - "768"
+                    - --d_ff
+                    - "2048"
+                    - --num_heads
+                    - "12"
+                    - --rope_theta
+                    - "10000.0"
+                    - --dtype
+                    - float32
+                    - --batch_size
+                    - "24"
+                    - --device
+                    - cuda
+                    - --lr
+                    - "3e-4"
+                    - --lr_scheduler
+                    - cosine
+                    - --max_steps
+                    - "50000"
+                    - --optimizer
+                    - adamw
+                    - --betas
+                    - "0.9"
+                    - "0.99"
+                    - --weight_decay
+                    - "0.1"
+                    - --optim_eps
+                    - "1e-8"
+                    - --min_lr
+                    - "1e-5"
+                    - --max_lr
+                    - "3e-4"
+                    - --T_warmup
+                    - "500"
+                    - --T_cosine
+                    - "40000"
+                    - --eval_period
+                    - "100"
+                    - --eval_batch
+                    - "500"
+                    - --saved_path
+                    - ./checkpoints
+                    - --save_period
+                    - "10000"
+                    - --wandb
+                codePath: assignment1/cs336_basics/main.py
+                codePathLocal: cs336_basics/main.py
+                cpu_count: 128
+                cpu_count_logical: 256
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "4013136478208"
+                        used: "346114654208"
+                email: ngocquan.official@gmail.com
+                executable: /prj/corp/airesearch/lasvegas/vol11-scratch/quanpham/quanpham/cs336/assignment1/.venv/bin/python3
+                git:
+                    commit: 7ca143baad8f59a3fa443ba675278474c27696f9
+                    remote: https://github.com/ngocquanai/cs336.git
+                gpu: NVIDIA H100 80GB HBM3
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-c7793d79-de64-efb7-3b37-ab08485b26ba
+                host: quanpham-1gpu-0-2
+                memory:
+                    total: "1622995316736"
+                os: Linux-5.15.0-139-generic-x86_64-with-glibc2.35
+                program: /prj/corp/airesearch/lasvegas/vol11-scratch/quanpham/quanpham/cs336/assignment1/cs336_basics/main.py
+                python: CPython 3.12.13
+                root: /prj/corp/airesearch/lasvegas/vol11-scratch/quanpham/quanpham/cs336/assignment1
+                startedAt: "2026-04-02T08:00:24.952624Z"
+                writerId: zijv0ka0m11cxdgwukvfhity00jdxcyr
+        m: []
+        python_version: 3.12.13
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "4": 3.12.13
+            "5": 0.22.3
+            "12": 0.22.3
+            "13": linux-x86_64

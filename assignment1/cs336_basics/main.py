@@ -11,6 +11,9 @@ from cs336_basics.optimizer import AdamW, SGD, WarmupCosineAnnealingLR
 from cs336_basics.loss import CrossEntropyLoss
 from cs336_basics.utils.io import load_checkpoint, save_checkpoint
 
+import wandb
+import time
+
 
 def parse_args() :
     parser = argparse.ArgumentParser(description= "Training Transformer Language Model on given dataset")
@@ -60,10 +63,24 @@ def parse_args() :
     parser.add_argument("--saved_path", type= str, default= "./checkpoints")
     parser.add_argument("--save_period", type= int, default= 1000, help= "Save intermediate checkpoints after how many steps")
 
+    # wandb
+    parser.add_argument("--wandb", action= "store_true", default= False, help= "Use wandb to log training process")
+    parser.add_argument("--wandb_project", type= str, default= "cs336-assignment1", help= "Wandb project name")
+    parser.add_argument("--wandb_run", type= str, default= "")
+
+    # ablation
+    parser.add_argument("--ablation", action= "store_true", default= False)
+    parser.add_argument("--ablation_part", type= str, required= False, choices= ["lr", "max_lr", "min_lr", "lr_scheduler"])
+    parser.add_argument("--ablation_value", type= str, default = "")
+
+
+
     return parser.parse_args()
 
 
 def train(args) :
+
+    # Set up
 
     os.makedirs(args.saved_path, exist_ok= True)
     device = torch.device(args.device)
@@ -77,7 +94,20 @@ def train(args) :
         dtype = torch.bfloat16
     else :
         raise ValueError(f"Invalid torch dtype {args.dtype}")
+
     
+    if args.wandb :
+        wandb.login()
+        if args.ablation :
+            project_name = f"ablation-{args.ablation_part}"
+            run_name = f"{args.ablation_part}_{args.ablation_value}"
+            wandb.init(project= project_name, name= run_name)
+        else :
+            project_name = args.wandb_project
+            wandb.init(project= project_name)
+
+
+        
 
     # data
     train_dataloader = DataLoader(
@@ -86,7 +116,7 @@ def train(args) :
         context_len= args.context_len,
         device= device)
 
-    valid_dataloader = DataLoader(
+    val_dataloader = DataLoader(
         datapath= args.valid_path,
         batch_size= args.batch_size,
         context_len= args.context_len,
@@ -122,6 +152,14 @@ def train(args) :
     # TRAINING
     model.train()
     criteria = CrossEntropyLoss()
+    start_time = time.time()
+        
+    print("Start training process!!!")
+    if args.ablation :
+        print(args.ablation_part, args.ablation_value)
+    
+
+
     for step in range(args.max_steps) :
         x, y = next(train_dataloader)
         logits = model(x)
@@ -132,18 +170,39 @@ def train(args) :
         optimizer.step()
         scheduler.step()
         
-        if step + 1 % 10 == 0 :
-            print(f"Loss at step {step}: {int(loss.item()*10000)/10000}")
+        current_loss = int(loss.item()*10000)/10000
+
+        
+        if args.wandb :
+            runtime = int((time.time() - start_time)/60*100)/100 # runtime in minutes
+            wandb.log({
+                "train/loss" : current_loss,
+                "train/minutes" : runtime,
+                "train/lr" : scheduler.get_last_lr()[0],
+                "step" : step + 1,
+            })
 
 
         # validation
-        if step + 1 % args.eval_period == 0 :
+        if (step + 1) % args.eval_period == 0 :
+            eval_start_time = time.time()
+            optimizer.zero_grad()
             model.eval()
-            val_loss = eval(model, dataloader, criteria, args.eval_batch)
+            with torch.no_grad() :
+                val_loss = eval(model, val_dataloader, criteria, args.eval_batch)
+
+                if args.wandb :
+                    eval_end_time = time.time()
+                    eval_runtime = int((eval_end_time - eval_start_time)/60*100)/100 # runtime in minutes
+                    wandb.log({
+                        "val/loss" : val_loss,
+                        "step" : step + 1,
+                        "val/minutes" : eval_runtime,
+                    })
             model.train()
 
         # save checkpoint
-        if step + 1 % args.save_period == 0 :
+        if (step + 1) % args.save_period == 0 :
             saved_path = os.path.join(args.saved_path, f"ckpt_step_{step+1}.pt")
             save_checkpoint(model, optimizer, iteration= step + 1, out= saved_path)
 
@@ -153,11 +212,13 @@ def train(args) :
 
 def eval(model, dataloader, criteria, steps) :
     total_loss = 0
-    for step in range(steps) :
-        x, y = next(dataloader)
-        logits = model(x)
-        loss = criteria(logits, y)
-        total_loss += loss
+    with torch.no_grad() :
+        for step in range(steps) :
+            x, y = next(dataloader)
+            logits = model(x)
+            loss = criteria(logits, y)
+            total_loss += loss.item()
+    
     
     return total_loss/steps
 
