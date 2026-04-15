@@ -1,0 +1,67 @@
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 --val_context_len 512 \
+  --num_layers 12 --num_heads 12  --d_model 768  --d_ff 2048 \
+  --rope_theta 10000.0 \
+  --dtype float32 --device cuda \
+  --lr_scheduler cosine --T_warmup 200 --T_cosine 6000 \
+  --max_steps 6400 \
+  --optimizer muon \
+  --betas 0.9 0.99 \
+  --momentum 0.95 \
+  --weight_decay 0.05 --optim_eps 1e-8 \
+  --eval_period 200 --eval_batch 25 \
+  --saved_path ./checkpoints --save_period 10000 \
+  --wandb \
+  --wandb_project gpt2_tuning \
+  --batch_size 72 \
+  --lr 8e-3 --min_lr 1e-5 --scale_lr_muon 6.0 \
+  --gpu_id 3
+
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 --val_context_len 512 \
+  --num_layers 12 --num_heads 12  --d_model 768  --d_ff 2048 \
+  --rope_theta 10000.0 \
+  --dtype float32 --device cuda \
+  --lr_scheduler cosine --T_warmup 200 --T_cosine 6000 \
+  --max_steps 6400 \
+  --optimizer muon \
+  --betas 0.9 0.99 \
+  --momentum 0.95 \
+  --weight_decay 0.1 --optim_eps 1e-8 \
+  --eval_period 200 --eval_batch 25 \
+  --saved_path ./checkpoints --save_period 10000 \
+  --wandb \
+  --wandb_project gpt2_tuning \
+  --batch_size 72 \
+  --lr 8e-3 --min_lr 1e-5 --scale_lr_muon 6.0 \
+  --gpu_id 3
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 --val_context_len 512 \
+  --num_layers 12 --num_heads 12  --d_model 768  --d_ff 2048 \
+  --rope_theta 10000.0 \
+  --dtype float32 --device cuda \
+  --lr_scheduler cosine --T_warmup 200 --T_cosine 6000 \
+  --max_steps 6400 \
+  --optimizer muon \
+  --betas 0.9 0.99 \
+  --momentum 0.95 \
+  --weight_decay 0.01 --optim_eps 1e-8 \
+  --eval_period 200 --eval_batch 25 \
+  --saved_path ./checkpoints --save_period 10000 \
+  --wandb \
+  --wandb_project gpt2_tuning \
+  --batch_size 72 \
+  --lr 8e-3 --min_lr 1e-5 --scale_lr_muon 6.0 \
+  --gpu_id 3

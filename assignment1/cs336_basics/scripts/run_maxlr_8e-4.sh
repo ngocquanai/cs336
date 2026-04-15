@@ -13,7 +13,7 @@ uv run python cs336_basics/main.py \
   --device cuda \
   --lr 8e-4 \
   --lr_scheduler cosine \
-  --max_steps 50000 \
+  --max_steps 7200 \
   --optimizer adamw \
   --betas 0.9 0.99 \
   --weight_decay 0.1 \
@@ -22,11 +22,12 @@ uv run python cs336_basics/main.py \
   --max_lr 8e-4 \
   --T_warmup 500 \
   --T_cosine 40000 \
-  --eval_period 5000 \
-  --eval_batch 100 \
+  --eval_period 1000 \
+  --eval_batch 50 \
   --saved_path ./checkpoints \
   --save_period 10000 \
   --wandb \
   --ablation \
   --ablation_part max_lr \
-  --ablation_value 8e-4 
+  --ablation_value 8e-4  \
+  --gpu_id 3 

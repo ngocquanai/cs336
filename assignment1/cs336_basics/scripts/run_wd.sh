@@ -1,0 +1,136 @@
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 \
+  --val_context_len 512 \
+  --num_layers 12 \
+  --d_model 768 \
+  --d_ff 2048 \
+  --num_heads 12 \
+  --rope_theta 10000.0 \
+  --dtype float32 \
+  --batch_size 72 \
+  --device cuda \
+  --lr 8e-4 \
+  --lr_scheduler cosine \
+  --max_steps 6250 \
+  --optimizer adamw \
+  --betas 0.9 0.99 \
+  --weight_decay 0.05 \
+  --optim_eps 1e-8 \
+  --min_lr 1e-5 \
+  --T_warmup 500 \
+  --T_cosine 40000 \
+  --eval_period 200 \
+  --eval_batch 50 \
+  --saved_path ./checkpoints \
+  --save_period 10000 \
+  --wandb \
+  --ablation \
+  --ablation_part wd \
+  --ablation_value 0.05_lr8e-4  \
+  --gpu_id 0 
+
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 \
+  --val_context_len 512 \
+  --num_layers 12 \
+  --d_model 768 \
+  --d_ff 2048 \
+  --num_heads 12 \
+  --rope_theta 10000.0 \
+  --dtype float32 \
+  --batch_size 72 \
+  --device cuda \
+  --lr 8e-4 \
+  --lr_scheduler cosine \
+  --max_steps 6250 \
+  --optimizer adamw \
+  --betas 0.9 0.99 \
+  --weight_decay 0.01 \
+  --optim_eps 1e-8 \
+  --min_lr 1e-5 \
+  --T_warmup 500 \
+  --T_cosine 40000 \
+  --eval_period 200 \
+  --eval_batch 50 \
+  --saved_path ./checkpoints \
+  --save_period 10000 \
+  --wandb \
+  --ablation \
+  --ablation_part wd \
+  --ablation_value 0.01_lr8e-4  \
+  --gpu_id 1 
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 \
+  --val_context_len 512 \
+  --num_layers 12 \
+  --d_model 768 \
+  --d_ff 2048 \
+  --num_heads 12 \
+  --rope_theta 10000.0 \
+  --dtype float32 \
+  --batch_size 72 \
+  --device cuda \
+  --lr 8e-4 \
+  --lr_scheduler cosine \
+  --max_steps 6250 \
+  --optimizer adamw \
+  --betas 0.9 0.99 \
+  --weight_decay 0.12 \
+  --optim_eps 1e-8 \
+  --min_lr 1e-5 \
+  --T_warmup 500 \
+  --T_cosine 40000 \
+  --eval_period 200 \
+  --eval_batch 50 \
+  --saved_path ./checkpoints \
+  --save_period 10000 \
+  --wandb \
+  --ablation \
+  --ablation_part wd \
+  --ablation_value 0.12_lr8e-4  \
+  --gpu_id 2
+
+uv run python cs336_basics/main.py \
+  --train_path ../data/owt-train_token_ids.npy \
+  --valid_path ../data/owt-val_token_ids.npy \
+  --vocab_size 32000 \
+  --context_len 512 \
+  --val_context_len 512 \
+  --num_layers 12 \
+  --d_model 768 \
+  --d_ff 2048 \
+  --num_heads 12 \
+  --rope_theta 10000.0 \
+  --dtype float32 \
+  --batch_size 72 \
+  --device cuda \
+  --lr 8e-4 \
+  --lr_scheduler cosine \
+  --max_steps 6250 \
+  --optimizer adamw \
+  --betas 0.9 0.99 \
+  --weight_decay 0.25 \
+  --optim_eps 1e-8 \
+  --min_lr 1e-5 \
+  --T_warmup 500 \
+  --T_cosine 40000 \
+  --eval_period 200 \
+  --eval_batch 50 \
+  --saved_path ./checkpoints \
+  --save_period 10000 \
+  --wandb \
+  --ablation \
+  --ablation_part wd \
+  --ablation_value 0.25_lr8e-4  \
+  --gpu_id 3 
